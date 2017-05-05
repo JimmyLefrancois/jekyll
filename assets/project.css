@@ -1,4 +1,31 @@
+/*COVER PART*/
+
+.cover .bg h1, .cover .bg h2 {
+    color: #FFF;
+}
+
+.cover .bg h1 {
+    font-size: 42px;
+}
+
+.cover .bg h2 {
+    font-size: 16px;
+    padding-top: 12px;
+}
+
 .cover .bg {
-    height: 660px;
+    height: 560px;
     width: 100%;
+    padding: 200px;
+    background-attachment: scroll;
+    background-position: center;
+    background-origin: content-box;
+}
+
+/*PICTURE PART*/
+
+/*DETAIL PART*/
+
+.details {
+    background-color: #F9F9F9;
 }
