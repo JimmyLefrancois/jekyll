@@ -1,9 +1,21 @@
 {% include header.html %}
 
-{% for album in site.albums %}
+<div id="grid">
+	<div id="posts">
+		<div class="grid-sizer col-md-3"></div>
+		{% for album in site.albums %}
 
-    <a href="{{ album.url }}">{{ album.label }}</a>
-    <img src="/{{ album.layout }}/{{ album.label }}/photos/cover_min.jpg" alt="">
-{% endfor %}
+			<div class="post">
+				<img src="/{{ album.layout }}/{{ album.label }}/photos/cover_min.jpg" alt=""><br>
+				<br>
+				<strong>{{ album.label }}</strong><br>
+				<small>{{ album.label }}</small>
+			</div>
+
+		{% endfor %}
+	<!-- <a href="{{ album.url }}">{{ album.label }}</a>
+	<img src="/{{ album.layout }}/{{ album.label }}/photos/cover_min.jpg" alt=""> -->
+	</div>
+</div>
 
 {% include footer.html %}
