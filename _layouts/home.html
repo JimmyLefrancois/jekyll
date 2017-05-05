@@ -1,0 +1,7 @@
+{% include header.html %}
+
+{% for album in site.albums %}
+    <a href="{{ album.url }}">{{ album.label }}</a>
+{% endfor %}
+
+{% include footer.html %}

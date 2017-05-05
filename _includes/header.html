@@ -1,0 +1,14 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{{ site.title }}</title>
+	<link rel="stylesheet" href='{{ "/assets/bootstrap.css" | relative_url }}'>
+	{% if page.layout == 'album' %}
+		<link rel="stylesheet" href='{{ "/assets/project.css" | relative_url }}'>
+	{% endif %}
+
+
+</head>
+<body>
+
+	<div class="container-fluid">
