@@ -1,7 +1,9 @@
 {% include header.html %}
 
 {% for album in site.albums %}
+
     <a href="{{ album.url }}">{{ album.label }}</a>
+    <img src="/{{ album.layout }}/{{ album.label }}/photos/cover_min.jpg" alt="">
 {% endfor %}
 
 {% include footer.html %}
