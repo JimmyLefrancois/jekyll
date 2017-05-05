@@ -1,15 +1,9 @@
-     <script src='{{ "/assets/jquery.js" | relative_url }}'></script>
-    {% if page.layout == 'home' %}
-        <script src='{{ "/assets/masonry.js" | relative_url }}'></script>
-        <script src='{{ "/assets/grid.js" | relative_url }}'></script>
-        <script>
-            $('.grid').masonry({
-              itemSelector: '.grid-item', // use a separate class for itemSelector, other than .col-
-              columnWidth: '.grid-sizer',
-              percentPosition: true
-            });
-        </script>
-    {% endif %}
-    </div>
+		</div>
+		<script src='{{ "/assets/jquery.js" | relative_url }}'></script>
+		{% if page.layout == 'home' %}
+				<script src='{{ "/assets/jquery.min.js" | relative_url }}'></script>
+				<script src='{{ "/assets/plugins.js" | relative_url }}'></script>
+				<script src='{{ "/assets/scripts.js" | relative_url }}'></script>
+		{% endif %}
 </body>
 </html>
