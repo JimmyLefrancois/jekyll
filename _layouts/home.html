@@ -6,10 +6,10 @@
 		{% for album in site.albums %}
 
 			<div class="post">
-				<img src="/{{ album.layout }}/{{ album.label }}/photos/cover_min.jpg" alt=""><br>
+				<img src="/{{ album.layout }}/{{ album.photospath }}/photos/cover_min.jpg" alt=""><br>
 				<br>
 				<strong>{{ album.label }}</strong><br>
-				<small>{{ album.label }}</small>
+				<small>Catégorie</small>
 			</div>
 
 		{% endfor %}
