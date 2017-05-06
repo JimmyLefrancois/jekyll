@@ -1,27 +1,114 @@
 {% include header.html %}
 
-<div class="row">
-	<div class="cover col-md-12">
-		<div class="bg" style="background-image:url('photos/cover.jpg')">
-			<h1 class="text-center">{{ page.label }}</h1>
-			<h2 class="text-center">{{ page.description }}</h2>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-
-	<div class="col-md-7">
-
-	</div>
-
-	<div class="col-md-5 details">
-		<h3>Détails</h3>
-		<p>
-			Nam nisl enim, sagittis pharetra accumsan pretium, volutpat sed risus. Vivamus hendrerit tellus libero, eu euismod felis malesuada quis. Sed magna lacus, interdum ac elit eu, sodales posuere magna. Nulla facilisi. Duis lorem urna, porta gravida erat nec, venenatis placerat nisl. Donec quis arcu convallis, vestibulum nibh quis, pharetra mauris. Nunc porta et justo eu suscipit. Cras posuere orci sit amet nisi euismod maximus. Maecenas neque dui, mattis ut nulla et, commodo ullamcorper odio. Nullam nec sagittis dui. Nullam nibh lacus, pretium sit amet metus a, imperdiet faucibus magna.
-		</p>
-	</div>
-
+ <div class="content-holder elem scale-bg2 transition3" >
+    <!-- Fixed title-->
+    <div class="fixed-title"><span>{{ page.label }}</span></div>
+    <!-- Page navigation--> 
+    <!--=============== Content  ===============-->
+    <div class="content">
+        <!-- Page title section --> 
+        <section class="parallax-section">
+            <div class="overlay"></div>
+            <div class="bg" style="background-image:url('photos/cover.jpg')" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);"></div>
+            <div class="container">
+                <h2>{{ page.label }}</h2>
+                <div class="separator-image"><img src="images/separator.png" alt=""></div>
+                <h3 class="subtitle">{{ page.description }}</h3>
+            </div>
+            <a class="custom-scroll-link sect-scroll" href="#sec1"><i class="fa fa-angle-double-down"></i></a>
+        </section>
+        <!-- Page title section end--> 
+        <div class="sections-bg"></div>
+        <!--  project  -->
+        <section id="sec1">
+            <div class="container column-container">
+                <div class="row">
+                    <!--  project images -->
+                    <div class="col-md-7">
+                        <div class="vertical-gallery popup-gallery two-columns-box">
+                            <div class="box-item">
+                                <a href="photos/1.jpg">
+                                <img src="photos/1_min.jpg"  class="respimg" alt="">
+                                </a>
+                            </div>
+                            <div class="box-item">
+                                <a href="photos/1.jpg">
+                                <img src="photos/1_min.jpg"  class="respimg" alt="">
+                                </a>
+                            </div>
+                            <div class="box-item">
+                                <a href="photos/1.jpg">
+                                <img src="photos/1_min.jpg"  class="respimg" alt="">
+                                </a>
+                            </div>
+                            <div class="box-item">
+                                <a href="photos/1.jpg">
+                                <img src="photos/1_min.jpg"  class="respimg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                       
+                        <!--  project navigation -->
+                      <!--   <div class="project-box">
+                            <div class="content-nav">
+                                <ul>
+                                    <li><a href="portfolio-single2.html" ><i class="fa fa-long-arrow-left"></i></a></li>
+                                    <li><span>/</span></li>
+                                    <li><a href="portfolio-single3.html" ><i class="fa fa-long-arrow-right"></i></a></li>
+                                </ul>
+                                <div class="p-all">
+                                    <a href="portfolio.html" ><i class="fa fa-th-large"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!--  project navigation end -->
+                    </div>
+                    <!--  project images end -->
+                    <!--  project details  -->
+                    <div class="col-md-5">
+                        <div class="fix-box">
+                            <div class="project-box">
+                                <h3>Details</h3>
+                                <p>Nam nisl enim, sagittis pharetra accumsan pretium, volutpat sed risus. Vivamus hendrerit tellus libero, eu euismod felis malesuada quis. Sed magna lacus, interdum ac elit eu, sodales posuere magna. Nulla facilisi. Duis lorem urna, porta gravida erat nec, venenatis placerat nisl. Donec quis arcu convallis, vestibulum nibh quis, pharetra mauris. Nunc porta et justo eu suscipit. Cras posuere orci sit amet nisi euismod maximus. Maecenas neque dui, mattis ut nulla et, commodo ullamcorper odio. Nullam nec sagittis dui. Nullam nibh lacus, pretium sit amet metus a, imperdiet faucibus magna.</p>
+                            </div>
+                            <div class="project-box">
+                                <h3>Info</h3>
+                                <ul class="project-details">
+                                    <li>
+                                        <i class="fa fa-bicycle"></i>
+                                        <div class="pd-holder">
+                                            <h5>Category :  <a href="#">Travel </a> <a href="#">Outdoor</a></h5>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-calendar"></i>
+                                        <div class="pd-holder">
+                                            <h5>Date :  <a href="#">23 may 2015</a></h5>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-paw"></i>
+                                        <div class="pd-holder">
+                                            <h5>Client  :  <a href="#">Themeforest</a></h5>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-map-o"></i>
+                                        <div class="pd-holder">
+                                            <h5>Location :  <a href="#">Norway . Oslo</a></h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Content end  -->  
+    <!-- Share container  -->    
+    <div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
 </div>
 
 
