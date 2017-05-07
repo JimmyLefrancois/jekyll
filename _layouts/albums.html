@@ -25,27 +25,17 @@
                 <div class="row">
                     <!--  project images -->
                     <div class="col-md-7">
+
+                        {% assign number = page.photos %}
+
                         <div class="vertical-gallery popup-gallery two-columns-box">
-                            <div class="box-item">
-                                <a href="photos/1.jpg">
-                                <img src="photos/1_min.jpg"  class="respimg" alt="">
-                                </a>
-                            </div>
-                            <div class="box-item">
-                                <a href="photos/1.jpg">
-                                <img src="photos/1_min.jpg"  class="respimg" alt="">
-                                </a>
-                            </div>
-                            <div class="box-item">
-                                <a href="photos/1.jpg">
-                                <img src="photos/1_min.jpg"  class="respimg" alt="">
-                                </a>
-                            </div>
-                            <div class="box-item">
-                                <a href="photos/1.jpg">
-                                <img src="photos/1_min.jpg"  class="respimg" alt="">
-                                </a>
-                            </div>
+                            {% for i in (1..number) %}
+                                <div class="box-item">
+                                    <a href="photos/max/{{ page.label | downcase }}_{{ i }}.jpg">
+                                    <img src="photos/min/{{ page.label | downcase }}_{{ i }}.jpg" class="respimg" alt="">
+                                    </a>
+                                </div>
+                            {% endfor %}
                         </div>
                        
                         <!--  project navigation -->
