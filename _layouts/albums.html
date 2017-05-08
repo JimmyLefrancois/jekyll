@@ -31,8 +31,8 @@
                         <div class="vertical-gallery popup-gallery two-columns-box">
                             {% for i in (1..number) %}
                                 <div class="box-item">
-                                    <a href="photos/max/{{ page.label | downcase }}_{{ i }}.jpg">
-                                    <img src="photos/min/{{ page.label | downcase }}_{{ i }}.jpg" class="respimg" alt="">
+                                    <a href="photos/max/{{ page.photospath | downcase }}_{{ i }}.jpg">
+                                    <img src="photos/min/{{ page.photospath | downcase }}_{{ i }}.jpg" class="respimg" alt="">
                                     </a>
                                 </div>
                             {% endfor %}
@@ -59,7 +59,7 @@
                         <div class="fix-box">
                             <div class="project-box">
                                 <h3>Details</h3>
-                                <p>Nam nisl enim, sagittis pharetra accumsan pretium, volutpat sed risus. Vivamus hendrerit tellus libero, eu euismod felis malesuada quis. Sed magna lacus, interdum ac elit eu, sodales posuere magna. Nulla facilisi. Duis lorem urna, porta gravida erat nec, venenatis placerat nisl. Donec quis arcu convallis, vestibulum nibh quis, pharetra mauris. Nunc porta et justo eu suscipit. Cras posuere orci sit amet nisi euismod maximus. Maecenas neque dui, mattis ut nulla et, commodo ullamcorper odio. Nullam nec sagittis dui. Nullam nibh lacus, pretium sit amet metus a, imperdiet faucibus magna.</p>
+                                <p>{{ page.details }}</p>
                             </div>
                             <div class="project-box">
                                 <h3>Info</h3>
@@ -67,25 +67,19 @@
                                     <li>
                                         <i class="fa fa-bicycle"></i>
                                         <div class="pd-holder">
-                                            <h5>Category :  <a href="#">Travel </a> <a href="#">Outdoor</a></h5>
+                                            <h5>Category :  <a href="#">{{ page.tag1 }} </a> <a href="#">{{ page.tag2 }}</a></h5>
                                         </div>
                                     </li>
                                     <li>
                                         <i class="fa fa-calendar"></i>
                                         <div class="pd-holder">
-                                            <h5>Date :  <a href="#">23 may 2015</a></h5>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-paw"></i>
-                                        <div class="pd-holder">
-                                            <h5>Client  :  <a href="#">Themeforest</a></h5>
+                                            <h5>Date :  <a href="#">{{ page.datephoto }}</a></h5>
                                         </div>
                                     </li>
                                     <li>
                                         <i class="fa fa-map-o"></i>
                                         <div class="pd-holder">
-                                            <h5>Location :  <a href="#">Norway . Oslo</a></h5>
+                                            <h5>Location :  <a href="#">{{ page.location }}</a></h5>
                                         </div>
                                     </li>
                                 </ul>
