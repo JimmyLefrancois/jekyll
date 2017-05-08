@@ -15,12 +15,26 @@
 			<nav>
 				<ul>
 					<li><a href="{{ site.url }}">Home</a></li>
-					<li><a href="portfolio.html" class="act-link">Portfolio</a></li>
-					<li><a href="about.html">About us </a>
-					</li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="blog.html">Blog</a></li>
 					<li>
+						<a>Albums</a>
+						<ul>
+									{% for album in site.albums %}
+										<li><a href="{{ album.url }}" alt="{{ album.label }}">{{ album.label }}</a></li>
+									{% endfor %}
+									<!-- <li><a href="index.html">Slider</a></li>
+									<li><a href="index2.html">Slideshow</a></li>
+									<li><a href="index3.html">Multi Slider</a></li>
+									<li><a href="index4.html">Video</a></li>
+									<li><a href="index5.html">horizontal</a></li>
+									<li><a href="index6.html">Image</a></li> -->
+						</ul>
+					</li>
+				</ul>
+					<!-- <li><a href="portfolio.html" class="act-link">Portfolio</a></li>
+					<li><a href="about.html">About us </a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="blog.html">Blog</a></li> -->
+					<!-- <li>
 						<a>Pages</a>
 						<ul>
 							<li>
@@ -63,7 +77,7 @@
 							<li><a href="404.html">404</a></li>
 						</ul>
 					</li>
-				</ul>
+				</ul> -->
 			</nav>
 		</div>
 		<!--navigation end -->
