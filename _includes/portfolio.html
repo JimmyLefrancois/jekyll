@@ -7,13 +7,13 @@
 				<h1>{{ site.title }}</h1>
 			</div>
             <div class="separator separator-image"><img  src='{{ "/assets/images/separator2.png" | relative_url }}'   alt=""></div>
-            <h3 class="subtitle" style="color:#000;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h3>
+            <h3 class="subtitle" style="color:#000;">Photographie de paysage & de ciels étoilés essentiellement. </h3>
             <div class="filter-holder inline-filters">
                 <div class="gallery-filters">
-                    <a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">Tous les Albums</a>	
+                    <a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">Tous les Albums</a>
                     {% for tag in site.data.tags %}
                     	<a href="" class="gallery-filter" data-filter=".{{ tag.label }}">{{ tag.label }}</a>
-                    {% endfor %}	
+                    {% endfor %}
                     <!-- <a href="#" class="gallery-filter " data-filter=".travel">Travel</a>
                     <a href="#" class="gallery-filter" data-filter=".nature">Nature</a>
                     <a href="#" class="gallery-filter" data-filter=".comercial">Comercial</a> -->
