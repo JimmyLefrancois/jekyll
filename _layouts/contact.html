@@ -1,0 +1,100 @@
+{% include header.html %}
+
+<!--=============== Conten holder  ===============-->
+<div class="content-holder elem scale-bg2 transition3" >
+	<!--  Page title    -->
+	<div class="fixed-title"><span>Contacts</span></div>
+	<!--  Page title end   -->
+	<!--  Page navigation   -->
+	<div class="scroll-page-nav">
+		<ul>
+			<li><a  href="#sec1"></a></li>
+			<li><a  href="#sec2"></a></li>
+			<li><a  href="#sec3"></a></li>
+		</ul>
+	</div>
+	<!--  Page navigation  end -->
+	<div class="content full-height">
+		<!--  Page title section   -->
+		<section class="parallax-section">
+			<div class="overlay"></div>
+			<div class="bg" style="background-image:url(images/bg/59.jpg)" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);"></div>
+			<div class="container">
+				<h2>Contacts</h2>
+				<div class="separator"></div>
+				<h3 class="subtitle">Nunc convallis ante at mi scelerisque quis cursus risus auctor. </h3>
+			</div>
+			<a class="custom-scroll-link sect-scroll" href="#sec1"><i class="fa fa-angle-double-down"></i></a>
+		</section>
+		<!--  Page title section end  -->
+		<!--  Section contact info   -->
+		<section class="section-columns" id="sec1">
+			<div class="section-columns-img">
+				<div class="bg" style="background-image:url(images/bg/22.jpg)" ></div>
+			</div>
+			<div class="section-columns-text">
+				<div class="custom-inner">
+					<div class="container">
+						<h2>Get in Touch</h2>
+						<div class="separator"></div>
+						<div class="clearfix"></div>
+						<h3 class="subtitle">Look even slightly believable. If you are going to use a passage.</h3>
+						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+						<ul class="contact-list no-dec">
+							<li><span>Adress : </span><a href="#">27th Brooklyn New York, NY 10065</a></li>
+							<li><span>Phone : </span><a href="#">+7(111)123456789</a></li>
+							<li><span>E-mail : </span><a href="#">yourmail@domain.com</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--  Section contact info end   -->
+		<!--  Section social   -->
+		<section class="no-padding">
+			<div class="content">
+				<div class="inline-facts-holder">
+					<div class="inline-facts">
+						<h6><a href="{{ site.facebook }}">Facebook</a></h6>
+					</div>
+					<div class="inline-facts">
+						<h6><a href="{{ site.instagram }}">Instagram</a></h6>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- social end  -->
+		<!--  Section map   -->
+		<section class="no-padding" id="sec2">
+			<div class="map-box">
+				<div class="map-holder" data-top-bottom="transform: translateY(300px);" data-bottom-top="transform: translateY(-300px);">
+					<div  id="map-canvas"></div>
+				</div>
+			</div>
+		</section>
+		<!--  Section map end  -->
+		<!--  Section contact form  -->
+<!-- 		<section class="flat-form" id="sec3">
+			<div class="container">
+				<h2>Write us</h2>
+				<div class="separator-image"><img src="images/separator2.png" alt=""></div>
+				<div id="contact-form">
+					<div id="message"></div>
+					<form method="post" action="php/contact.php" name="contactform" id="contactform">
+						<input name="name" type="text" id="name"  class="inputForm2" onClick="this.select()" value="Name" >
+						<input name="email" type="text" id="email" onClick="this.select()" value="E-mail" >
+						<textarea name="comments"  id="comments" onClick="this.select()" >Message</textarea>
+						<input type="submit" class="send_message transition" id="submit" value="Send Message" />
+					</form>
+				</div>
+			</div>
+		</section> -->
+		<!--  Section contact form end  -->
+	</div>
+	<!-- Content end  -->
+	<!-- Share container  -->
+	<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
+</div>
+<!-- content holder end -->
+
+{% include footer.html %}
