@@ -26,6 +26,10 @@
                     <!--  project images -->
                     <div class="col-md-7">
 
+                        {% for photo in page.photoss %}
+                            toto
+                        {% endfor %}
+
                         {% assign number = page.photos %}
 
                         <div class="vertical-gallery popup-gallery two-columns-box">
@@ -37,20 +41,6 @@
                                 </div>
                             {% endfor %}
                         </div>
-
-                        <!--  project navigation -->
-                      <!--   <div class="project-box">
-                            <div class="content-nav">
-                                <ul>
-                                    <li><a href="portfolio-single2.html" ><i class="fa fa-long-arrow-left"></i></a></li>
-                                    <li><span>/</span></li>
-                                    <li><a href="portfolio-single3.html" ><i class="fa fa-long-arrow-right"></i></a></li>
-                                </ul>
-                                <div class="p-all">
-                                    <a href="portfolio.html" ><i class="fa fa-th-large"></i></a>
-                                </div>
-                            </div>
-                        </div> -->
                         <!--  project navigation end -->
                     </div>
                     <!--  project images end -->
