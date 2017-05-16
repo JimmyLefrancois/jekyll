@@ -33,7 +33,8 @@ photos:
  - path: lune-depuis-vercor.jpg
    alt: lune-depuis-vercor
    description:
-description: Photos d'astronomie
+description: Toutes mes photos d'astronomie - France - Isère - Grenoble - Photographies - Nouvelle Zélande
+description_album: Toutes mes photos d'astronomie
 details: Toutes mes photos de ciel étoilés, de Voie Lactée, de galaxies etc. C'est mon genre de photos préferé, celui qui permet de voir l'invisible pour nos yeux. Je suis impatient de découvrir et de photographier le ciel réputé de la Nouvelle Zélande !
 datephoto: 2016 - 2017
 ---
