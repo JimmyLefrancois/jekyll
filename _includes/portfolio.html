@@ -8,7 +8,7 @@
 				<img src="{{ "/assets/images/logo.png" | relative_url }}">
 			</div>
             <div class="separator separator-image"><img  src='{{ "/assets/images/separator2.png" | relative_url }}'   alt=""></div>
-            <h3 class="subtitle" style="color:#000;">Photographie de paysage & de ciels étoilés essentiellement. </h3>
+            <h1 class="subtitle" style="color:#000;">Photographies de Jimmy Lefrançois - Photos de paysages & de ciels étoilés essentiellement. </h1>
             <div class="filter-holder inline-filters">
                 <div class="gallery-filters">
                     <a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">Tous les Albums</a>
@@ -23,7 +23,8 @@
 		</div>
 
 			<div class="gallery-items grid-big-pad vis-port-info">
-				{% for album in site.albums %}
+				{% assign albums = site.albums | sort: 'label' %}
+				{% for album in albums %}
 
 					<div class="gallery-item {{ album.tag1 }} {{ album.tag2 }}">
 						<div class="grid-item-holder">
