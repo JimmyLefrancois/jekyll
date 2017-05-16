@@ -18,9 +18,12 @@ photos:
  - path: chateau_prague_nuit.jpg
    alt: chateau_prague_nuit
    description:
+ - path: fille-tag-prague.jpg
+   alt: fille-tag-prague
+   description:
 description: Séance photos de nuit au Senepy - Prague - République tchèque - Praha - Czech Republic
 description_album: Quelques jours Prague.
-details: Shooting de nuit au Senepy, l'occasion de tester la nouvelle tente. Avec une lune un peu trop présente, on ne s'est pas attardé sur la photo d'étoiles. On s'est plutôt amusé à faire du lightpainting avec les frontales, jouer avec la lumière du feu et profiter d'un magnifique lever de soleil sur l'Obiou.
+details: Quelques jours passés à Prague, l'occasion de découvrir ses styles d'architectures différents, son chateaux et ses ponts, ainsi que de gouter aux Trdelník & aux bières locales.
 datephoto: Mars 2017
 ---
 
