@@ -379,15 +379,27 @@ section {
 	padding-top:12px;
 	opacity:0.8;
 }
+h1.subtitle {
+	color:#fff;
+	font-size:16px;
+	font-style:italic;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	padding-top:12px;
+	opacity:0.8;
+	text-transform: none;
+}
 .parallax-section .bg {
 	width:110%;
 	left:-5%;
 	height:110%;
 	top:-5%;
 }
-.parallax-section h2 {
+.parallax-section h2, .parallax-section h1{
 	color:#fff;
 	font-size:42px;
+}
+.parallax-section h2 {
+	font-size:16px;
 }
 .align-text {
 	text-align:left;
@@ -1643,7 +1655,8 @@ footer {
 	display:inline-block;
 }
 .fixed-filter a.gallery-filter-active  , .vis-filter a.gallery-filter-active , .inline-filters a.gallery-filter-active{
-	text-decoration:line-through;
+	text-decoration:underline;
+	color: #1b2659;
 }
 .inline-filters {
 	float:left;
@@ -2111,7 +2124,7 @@ footer {
 	text-transform:uppercase;
 }
 .gallery-filter_active {
-	text-decoration:line-through;
+	text-decoration:underline;
 }
 .bg-slider {
 	z-index:1;
@@ -2418,7 +2431,7 @@ figure img {
 	font-size:16px;
 }
 .contact-list li a:hover {
-	text-decoration:line-through;
+	text-decoration:underline;
 }
 #contact-form {
 	text-align:center!important;
