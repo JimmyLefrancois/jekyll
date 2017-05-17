@@ -1,6 +1,6 @@
 ---
+title:  Astronomie
 layout: albums
-label:  Astronomie
 photospath: Astronomie
 location: France
 tag1: Astronomie
