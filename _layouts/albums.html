@@ -2,7 +2,7 @@
 
  <div class="content-holder elem scale-bg2 transition3" >
     <!-- Fixed title-->
-    <div class="fixed-title"><span>{{ page.label }}</span></div>
+    <div class="fixed-title"><span>{{ page.title }}</span></div>
     <!-- Page navigation-->
     <!--=============== Content  ===============-->
     <div class="content">
@@ -11,9 +11,9 @@
             <div class="overlay"></div>
             <div class="bg" style="background-image:url('photos/cover.jpg')" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);"></div>
             <div class="container">
-                <h2>{{ page.label }}</h2>
-                <div class="separator-image"><img src="images/separator.png" alt=""></div>
-                <h3 class="subtitle">{{ page.description }}</h3>
+                <h1>{{ page.title }}</h1>
+                <div class="separator-image"><img src='{{ "/assets/images/separator.png" | relative_url }}' alt=""></div>
+                <h2 class="subtitle">{{ page.description_album }}</h2>
             </div>
             <a class="custom-scroll-link sect-scroll" href="#sec1"><i class="fa fa-angle-double-down"></i></a>
         </section>
@@ -26,31 +26,15 @@
                     <!--  project images -->
                     <div class="col-md-7">
 
-                        {% assign number = page.photos %}
-
                         <div class="vertical-gallery popup-gallery two-columns-box">
-                            {% for i in (1..number) reversed %}
+                            {% for photo in page.photos %}
                                 <div class="box-item">
-                                    <a href="photos/max/{{ page.photospath | downcase }}_{{ i }}.jpg">
-                                    <img src="photos/min/{{ page.photospath | downcase }}_{{ i }}.jpg" class="respimg" alt="">
+                                    <a href="photos/max/{{ photo.path}}" title="{{ photo.description }}">
+                                    <img src="photos/min/{{ photo.path}}" class="respimg" alt="{{ photo.alt }}">
                                     </a>
                                 </div>
                             {% endfor %}
                         </div>
-
-                        <!--  project navigation -->
-                      <!--   <div class="project-box">
-                            <div class="content-nav">
-                                <ul>
-                                    <li><a href="portfolio-single2.html" ><i class="fa fa-long-arrow-left"></i></a></li>
-                                    <li><span>/</span></li>
-                                    <li><a href="portfolio-single3.html" ><i class="fa fa-long-arrow-right"></i></a></li>
-                                </ul>
-                                <div class="p-all">
-                                    <a href="portfolio.html" ><i class="fa fa-th-large"></i></a>
-                                </div>
-                            </div>
-                        </div> -->
                         <!--  project navigation end -->
                     </div>
                     <!--  project images end -->
@@ -92,7 +76,6 @@
     </div>
     <!-- Content end  -->
     <!-- Share container  -->
-    <div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
 </div>
 
 

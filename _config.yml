@@ -16,22 +16,27 @@
 title: Jimmy Lefrançois Photography
 email: jimmylefrancois38@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Toutes les photographies de Jimmy Lefrançois. Plusieurs thèmes, la nature, l'astronomie et surtout des paysages de France et de Nouvelle-Zélande. Bonne visite !
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 facebook: https://www.facebook.com/jimmylefrancoisphotography/
 instagram: https://www.instagram.com/lefrancois_jimmy/
-
-
+url: jimmylefrancois.com
+author: Jimmy Lefrançois
+social:
+  links:
+    - https://www.facebook.com/jimmylefrancoisphotography/
+    - https://www.instagram.com/lefrancois_jimmy/
+lang: fr
 # Build settings
 markdown: kramdown
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock

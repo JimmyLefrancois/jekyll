@@ -1,10 +1,14 @@
+			<div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','tumblr','linkedin']"></div>
 			</div>
+
+			<div class="left-decor"></div>
+			<div class="right-decor"></div>
 
 			<footer>
 				<div class="policy-box">
-					<span>© Outdoor 2015 . All rights reserved. </span>
+					<span>© Thème : Outdoor {{ site.time | date: "%Y" }} . All rights reserved. </span>
 					<ul>
-						<li><a href="#">jimmylefrancois38@gmail.com</a></li>
+						<li><a href="#">jimmylefrancoisphotography@gmail.com</a></li>
 						<li>- Made with <a href="https://jekyllrb.com">Jekyll</a> and <a href="https://pages.github.com/">Github Page</a></li>
 					</ul>
 				</div>
@@ -24,14 +28,8 @@
 		<script src='{{ "/assets/jquery.min.js" | relative_url }}'></script>
 		<script src='{{ "/assets/plugins.js" | relative_url }}'></script>
 		<script src='{{ "/assets/scripts.js" | relative_url }}'></script>
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-			ga('create', 'UA-99065785-1', 'auto');
-			ga('send', 'pageview');
-		</script>
+		{% if jekyll.environment == 'production' %}
+			{% include analytics.html %}
+		{% endif %}
 </body>
 </html>
