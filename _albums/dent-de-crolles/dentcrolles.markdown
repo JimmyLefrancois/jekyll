@@ -1,22 +1,14 @@
 ---
 layout: albums
-title:  Senepy
-photospath: Senepy
-location: Senepy - France
+title:  Dent de Crolles
+photospath: dent-de-crolles
+location: Dent de Crolles - France
+date: 2017-05-21 00:00:00 +0200
 tag1: Paysage
-tag2: Nocturne
+tag2: Nature
 photos:
- - path: arbre_vue_obiou.jpg
-   alt: arbre_vue_obiou
-   description:
- - path: lightpainting_arbre_nuit.jpg
-   alt: lightpainting_arbre_nuit
-   description:
- - path: panorama_sur_obiou.jpg
-   alt: panorama_sur_obiou
-   description:
- - path: tente_eclairee_feu_de_camp.jpg
-   alt: tente_eclairee_feu_de_camp
+ - path: panorama-1-dent-de-crolles.jpg
+   alt: panorama-1-dent-de-crolles
    description:
 description: Séance photos de nuit au Senepy - France - Isère - Grenoble - Photographies
 description_album: Nuit au Senepy
