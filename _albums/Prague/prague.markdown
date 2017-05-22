@@ -1,6 +1,6 @@
 ---
 layout: albums
-label:  Prague
+title:  Prague
 photospath: Prague
 location: Prague - République tchèque
 tag1: Paysage
@@ -21,7 +21,7 @@ photos:
  - path: fille-tag-prague.jpg
    alt: fille-tag-prague
    description:
-description: Séance photos de nuit au Senepy - Prague - République tchèque - Praha - Czech Republic
+description: Quelques jours passés à Prague - Prague - République tchèque - Praha - Czech Republic - Photographies
 description_album: Quelques jours Prague.
 details: Quelques jours passés à Prague, l'occasion de découvrir ses styles d'architectures différents, son chateaux et ses ponts, ainsi que de gouter aux Trdelník & aux bières locales.
 datephoto: Mars 2017

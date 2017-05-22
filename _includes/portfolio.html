@@ -23,7 +23,7 @@
 		</div>
 
 			<div class="gallery-items grid-big-pad vis-port-info">
-				{% assign albums = site.albums | sort: 'label' %}
+				{% assign albums = site.albums | sort: 'title' %}
 				{% for album in albums %}
 
 					<div class="gallery-item {{ album.tag1 }} {{ album.tag2 }}">
@@ -35,7 +35,7 @@
 								</a>
 							</div>
 							<div class="grid-item ">
-								<h3><a href="portfolio-single.html" class="ajax portfolio-link">{{ album.label }}</a></h3>
+								<h3><a href="portfolio-single.html" class="ajax portfolio-link">{{ album.title }}</a></h3>
 								<span>{{ album.tag1 }}  /  {{ album.tag2 }}</span>
 							</div>
 						</div>

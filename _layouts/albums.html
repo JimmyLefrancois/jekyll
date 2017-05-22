@@ -2,7 +2,7 @@
 
  <div class="content-holder elem scale-bg2 transition3" >
     <!-- Fixed title-->
-    <div class="fixed-title"><span>{{ page.label }}</span></div>
+    <div class="fixed-title"><span>{{ page.title }}</span></div>
     <!-- Page navigation-->
     <!--=============== Content  ===============-->
     <div class="content">
@@ -11,7 +11,7 @@
             <div class="overlay"></div>
             <div class="bg" style="background-image:url('photos/cover.jpg')" data-top-bottom="transform: translateY(200px);" data-bottom-top="transform: translateY(-200px);"></div>
             <div class="container">
-                <h1>{{ page.label }}</h1>
+                <h1>{{ page.title }}</h1>
                 <div class="separator-image"><img src='{{ "/assets/images/separator.png" | relative_url }}' alt=""></div>
                 <h2 class="subtitle">{{ page.description_album }}</h2>
             </div>
@@ -76,7 +76,6 @@
     </div>
     <!-- Content end  -->
     <!-- Share container  -->
-    <div class="share-container  isShare"  data-share="['facebook','pinterest','googleplus','twitter','linkedin']"></div>
 </div>
 
 

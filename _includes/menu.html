@@ -19,7 +19,7 @@
 						<a>Albums</a>
 						<ul>
 									{% for album in site.albums %}
-										<li><a href="{{ album.url }}" alt="{{ album.label }}">{{ album.label }}</a></li>
+										<li><a href="{{ album.url }}" alt="{{ album.title }}">{{ album.title }}</a></li>
 									{% endfor %}
 									<!-- <li><a href="index.html">Slider</a></li>
 									<li><a href="index2.html">Slideshow</a></li>
@@ -29,6 +29,7 @@
 									<li><a href="index6.html">Image</a></li> -->
 						</ul>
 					</li>
+					<!-- <li><a href="{{ site.url | append: '/live.html' }}">En live</a></li> -->
 					<li><a href="{{ site.url | append: '/contact.html' }}">Contact</a></li>
 				</ul>
 					<!-- <li><a href="portfolio.html" class="act-link">Portfolio</a></li>
