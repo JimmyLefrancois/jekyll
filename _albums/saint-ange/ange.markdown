@@ -5,6 +5,7 @@ photospath: Senepy
 location: Senepy - France
 tag1: Paysage
 tag2: Nocturne
+date: 2017-05-05 00:00:00 +0200
 photos:
  - path: arbre_vue_obiou.jpg
    alt: arbre_vue_obiou
