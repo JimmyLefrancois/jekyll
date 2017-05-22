@@ -5,6 +5,7 @@ photospath: Prague
 location: Prague - République tchèque
 tag1: Paysage
 tag2: Ville
+date: 2017-03-05 00:00:00 +0200
 photos:
  - path: batiment-fin-vertical-prague.jpg
    alt: batiment-fin-vertical-prague
@@ -22,8 +23,8 @@ photos:
    alt: fille-tag-prague
    description:
 description: Quelques jours passés à Prague - Prague - République tchèque - Praha - Czech Republic - Photographies
-description_album: Quelques jours Prague.
-details: Quelques jours passés à Prague, l'occasion de découvrir ses styles d'architectures différents, son chateaux et ses ponts, ainsi que de gouter aux Trdelník & aux bières locales.
+description_album: Quelques jours à Prague.
+details: Quelques jours passés à Prague. L'occasion de découvrir ses différents styles architecturaux, son château et ses ponts, et de goûter aux Trdelník & aux bières locales.
 datephoto: Mars 2017
 ---
 

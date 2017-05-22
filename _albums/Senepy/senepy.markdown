@@ -5,6 +5,7 @@ photospath: Senepy
 location: Senepy - France
 tag1: Paysage
 tag2: Nocturne
+date: 2017-04-05 00:00:00 +0200
 photos:
  - path: arbre_vue_obiou.jpg
    alt: arbre_vue_obiou
@@ -20,7 +21,7 @@ photos:
    description:
 description: Séance photos de nuit au Senepy - France - Isère - Grenoble - Photographies
 description_album: Nuit au Senepy
-details: Shooting de nuit au Senepy, l'occasion de tester la nouvelle tente. Avec une lune un peu trop présente, on ne s'est pas attardé sur la photo d'étoiles. On s'est plutôt amusé à faire du lightpainting avec les frontales, jouer avec la lumière du feu et profiter d'un magnifique lever de soleil sur l'Obiou.
+details: Shooting de nuit au Senepy avec un ami. Avec une lune un peu trop présente, on ne s'est pas attardé sur la photo d'étoiles. On s'est plutôt amusé à faire du lightpainting avec les frontales, jouer avec la lumière du feu et profiter d'un magnifique lever de soleil sur l'Obiou.
 datephoto: Avril 2017
 ---
 

@@ -18,7 +18,7 @@
 					<li>
 						<a>Albums</a>
 						<ul>
-									{% for album in site.albums %}
+									{% for album in site.albums reversed | sort 'date' %}
 										<li><a href="{{ album.url }}" alt="{{ album.title }}">{{ album.title }}</a></li>
 									{% endfor %}
 									<!-- <li><a href="index.html">Slider</a></li>
