@@ -5,7 +5,7 @@ photospath: Astronomie
 location: France
 tag1: Astronomie
 tag2: Nocturne
-date: 2017-05-05 00:00:00 +0200
+date: 2017-05-22 00:00:00 +0200
 photos:
  - path: ciel-etoiles-arbres-belledonne.jpg
    alt: ciel-etoiles-arbres-belledonne
@@ -34,7 +34,7 @@ photos:
  - path: lune-depuis-vercor.jpg
    alt: lune-depuis-vercor
    description:
-description: Toutes mes photos d'astronomie - France - Isère - Grenoble - Photographies - Nouvelle Zélande - Photographies
+description: Toutes mes photos d'astronomie - France - Isère - Grenoble - Photographies - Nouvelle Zélande
 description_album: Toutes mes photos d'astronomie
 details: Toutes mes photos de ciels étoilés, de Voie Lactée et de galaxies. C'est mon genre de photos préferé, celui qui permet de voir l'invisible à nos yeux. Je suis impatient de découvrir et de photographier le ciel réputé de la Nouvelle Zélande !
 datephoto: ∞

@@ -1,10 +1,10 @@
 ---
 layout: albums
-label:  Senepy
-photospath: Senepy
-location: Senepy - France
+title: Saint Ange
+photospath: saint-ange
+location: Saint Ange - France
 tag1: Paysage
-tag2: Nocturne
+tag2: Nature
 date: 2017-05-05 00:00:00 +0200
 photos:
  - path: arbre_vue_obiou.jpg
@@ -19,9 +19,9 @@ photos:
  - path: tente_eclairee_feu_de_camp.jpg
    alt: tente_eclairee_feu_de_camp
    description:
-description: Séance photos de nuit au Senepy - France - Isère - Grenoble - Photographies 
-description_album: Nuit au Senepy
-details: Shooting de nuit au Senepy, l'occasion de tester la nouvelle tente. Avec une lune un peu trop présente, on ne s'est pas attardé sur la photo d'étoiles. On s'est plutôt amusé à faire du lightpainting avec les frontales, jouer avec la lumière du feu et profiter d'un magnifique lever de soleil sur l'Obiou.
+description: Ballade à Saint Ange - France - Isère - Grenoble - Photographies
+description_album: Ballade à Saint Ange
+details: Ballade à Saint Ange pour découvrir les lieux. Beaucoup de points de vue sympas, peu de photos dans cet album, j'étais dans les nuages la plupart du temps. De nuit l'endroit doit être top pour la photo.
 datephoto: Avril 2017
 ---
 
