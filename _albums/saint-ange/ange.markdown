@@ -7,17 +7,17 @@ tag1: Paysage
 tag2: Nature
 date: 2017-05-05 00:00:00 +0200
 photos:
- - path: arbre_vue_obiou.jpg
-   alt: arbre_vue_obiou
+ - path: cascade-saint-ange.jpg
+   alt: cascade-saint-ange
    description:
- - path: lightpainting_arbre_nuit.jpg
-   alt: lightpainting_arbre_nuit
+ - path: vue_sur_grenoble.jpg
+   alt: vue_sur_grenoble
    description:
- - path: panorama_sur_obiou.jpg
-   alt: panorama_sur_obiou
+ - path: cascade-pov-saint-ange.jpg
+   alt: cascade-pov-saint-ange
    description:
- - path: tente_eclairee_feu_de_camp.jpg
-   alt: tente_eclairee_feu_de_camp
+ - path: vue_saint_ange.jpg
+   alt: vue_saint_ange
    description:
 description: Ballade à Saint Ange - France - Isère - Grenoble - Photographies
 description_album: Ballade à Saint Ange

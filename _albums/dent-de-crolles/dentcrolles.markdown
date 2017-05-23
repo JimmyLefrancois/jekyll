@@ -7,8 +7,20 @@ date: 2017-05-21 00:00:00 +0200
 tag1: Paysage
 tag2: Nature
 photos:
+ - path: arbre-dent-de-crolles-chartreuse.jpg
+   alt: arbre-dent-de-crolles-chartreuse
+   description:
  - path: panorama-1-dent-de-crolles.jpg
    alt: panorama-1-dent-de-crolles
+   description:
+ - path: femme-photo-dent-de-crolles-chartreuse.jpg
+   alt: femme-photo-dent-de-crolles-chartreuse
+   description:
+ - path: homme-marchant-brume-dent-de-crolles-chartreuse.jpg
+   alt: homme-marchant-brume-dent-de-crolles-chartreuse
+   description:
+ - path: vue-sommets-dent-de-crolles-chartreuse.jpg
+   alt: vue-sommets-dent-de-crolles-chartreuse
    description:
 description: Randonnée photo à la Dent de Crolles - France - Isère - Grenoble - Photographies
 description_album: Randonnée photo à la Dent de Crolles
