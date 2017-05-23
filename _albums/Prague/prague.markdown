@@ -1,7 +1,7 @@
 ---
 layout: albums
 title:  Prague
-photospath: Prague
+photospath: prague
 location: Prague - République tchèque
 tag1: Paysage
 tag2: Ville
