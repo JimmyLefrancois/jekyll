@@ -1,7 +1,7 @@
 ---
 layout: albums
 title:  Senepy
-photospath: senepy
+photospath: Senepy
 location: Senepy - France
 tag1: Paysage
 tag2: Nocturne

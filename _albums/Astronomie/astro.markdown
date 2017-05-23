@@ -1,7 +1,7 @@
 ---
 title:  Astronomie
 layout: albums
-photospath: astronomie
+photospath: Astronomie
 location: France
 tag1: Astronomie
 tag2: Nocturne
