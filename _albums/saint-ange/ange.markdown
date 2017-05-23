@@ -19,9 +19,9 @@ photos:
  - path: vue_saint_ange.jpg
    alt: vue_saint_ange
    description:
-description: Ballade à Saint Ange - France - Isère - Grenoble - Photographies
-description_album: Ballade à Saint Ange
-details: Ballade à Saint Ange pour découvrir les lieux. Beaucoup de points de vue sympas, peu de photos dans cet album, j'étais dans les nuages la plupart du temps. De nuit l'endroit doit être top pour la photo.
+description: Balade à Saint Ange - France - Isère - Grenoble - Photographies
+description_album: Balade à Saint Ange
+details: Balade à Saint Ange pour découvrir les lieux. Beaucoup de points de vue sympas, malheuresement peu de photos dans cet album pour cet album, j'étais dans les nuages la plupart du temps. De nuit l'endroit doit être top pour la photo nocturne, à refaire :).
 datephoto: Avril 2017
 ---
 

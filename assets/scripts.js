@@ -527,6 +527,7 @@ function initOutdoor() {
     $(".share-container").share({
         networks: shs
     });
+    $('.show-share').html('Partager');
     function hideShare() {
         $(".show-share").addClass("isShare");
         $(".share-container a").each(function(a) {
