@@ -10,9 +10,9 @@ photos:
  - path: panorama-1-dent-de-crolles.jpg
    alt: panorama-1-dent-de-crolles
    description:
-description: Séance photos de nuit au Senepy - France - Isère - Grenoble - Photographies
-description_album: Nuit au Senepy
-details: Shooting de nuit au Senepy, l'occasion de tester la nouvelle tente. Avec une lune un peu trop présente, on ne s'est pas attardé sur la photo d'étoiles. On s'est plutôt amusé à faire du lightpainting avec les frontales, jouer avec la lumière du feu et profiter d'un magnifique lever de soleil sur l'Obiou.
-datephoto: Avril 2017
+description: Randonnée photo à la Dent de Crolles - France - Isère - Grenoble - Photographies
+description_album: Randonnée photo à la Dent de Crolles
+details: Randonnée sur la Dent de Crolles, le deuxième plus haut sommet du massif de Chartreuse. Ma préferée pour les paysages aux alentours de Grenoble. Beaucoup de contrastes entre le coté rocailleux du sommet et le coté très dense des forêts du massif. Avec un peu de chance vous pourrez apercevoir des chamois.
+datephoto: Mai 2017
 ---
 
