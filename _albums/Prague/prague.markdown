@@ -12,7 +12,7 @@ photos:
    description: Prague de nuit.
  - path: lion-prague.jpg
    alt: lion-prague
-   description: Le Winged Lion Memorial.
+   description: Le Winged Lion Memorial
  - path: vue-des-toits-prague.jpg
    alt: vue-des-toits-prague
    description: Sur les toits de Prague.
