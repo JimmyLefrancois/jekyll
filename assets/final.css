@@ -4336,6 +4336,12 @@ h1.subtitle, h2.subtitle {
 h1.subtitle {
     font-size: 25px;
 }
+
+.subtitle.front {
+    color: #000;
+}
+
+
 .parallax-section .bg {
     width:110%;
     left:-5%;
