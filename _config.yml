@@ -16,7 +16,7 @@
 title: Jimmy Lefrançois Photography
 email: jimmylefrancois38@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Toutes les photographies de Jimmy Lefrançois. Plusieurs thèmes, la nature, l'astronomie et surtout des paysages de France et de Nouvelle-Zélande. Bonne visite !
+  Toutes les photographies de Jimmy Lefrançois. Plusieurs thèmes, la nature, l'astronomie et surtout des paysages de France et de Nouvelle-Zélande.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
