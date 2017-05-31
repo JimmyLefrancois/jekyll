@@ -12,7 +12,7 @@ photos:
    description: Prague de nuit.
  - path: lion-prague.jpg
    alt: lion-prague
-   description: Le Winged Lion Memorial.
+   description: Winged Lion Memorial.
  - path: vue-des-toits-prague.jpg
    alt: vue-des-toits-prague
    description: Sur les toits de Prague.
@@ -27,4 +27,3 @@ description_album: Quelques jours à Prague.
 details: Quelques jours passés à Prague. L'occasion de découvrir ses différents styles architecturaux, son château et ses ponts, et de goûter aux Trdelník & aux bières locales.
 datephoto: Mars 2017
 ---
-
