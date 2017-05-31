@@ -9,7 +9,7 @@ date: 2017-03-05 00:00:00 +0200
 photos:
  - path: batiment-fin-vertical-prague.jpg
    alt: batiment-fin-vertical-prague
-   description: Prague de nuit..
+   description: Prague de nuit.
  - path: lion-prague.jpg
    alt: lion-prague
    description: Le Winged Lion Memorial.
