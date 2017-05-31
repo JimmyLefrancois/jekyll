@@ -4324,7 +4324,7 @@ section {
     padding-top:12px;
     opacity:0.8;
 }
-h1.subtitle {
+h1.subtitle, h2.subtitle {
     color:#fff;
     font-size:16px;
     font-style:italic;
@@ -4332,6 +4332,9 @@ h1.subtitle {
     padding-top:12px;
     opacity:0.8;
     text-transform: none;
+}
+h1.subtitle {
+    font-size: 25px;
 }
 .parallax-section .bg {
     width:110%;
