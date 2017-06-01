@@ -7191,7 +7191,45 @@ section {
 }
 }
 
-@media only screen and  (max-width: 1036px) {
+@media (min-width: 768px) {
+	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
+	    font-size: 23px;
+	}
+
+	.nav-button {
+		width: 48px;
+		margin-top: 13px;
+	}
+
+	.nav-button span {
+		height: 6px;
+	}
+
+	.project-box {
+		margin-top: 15px;
+		margin-bottom: 0px;
+	}
+
+	.project-box h3 {
+		padding-bottom: 0;
+	}
+
+	.project-box p {
+		margin-top: 43px;
+		font-size: 19px;
+		line-height: 26px;
+	}
+
+	.pd-holder h5 {
+		font-size: 20px;
+	}
+
+	.to-top {
+		width: 48px;
+	}
+}
+
+@media (min-width: 992px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 	    font-size: 16px;
 	}
@@ -7206,22 +7244,17 @@ section {
 	}
 }
 
-@media only screen and  (max-width: 360px) {
+/*@media only screen and  (min-width: 736px) and (max-width: 990px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
-	    font-size: 19px;
+	    font-size: 23px;
 	}
 
-	.nav-button {
-		width: 48px;
-		margin-top: 13px;
-	}
-
-	.nav-button span {
-		height: 6px;
+	.logo-holder a img {
+		width: 150px;
 	}
 }
 
-@media only screen and  (max-width: 990px) {
+@media only screen and (max-width: 990px) {
 	.project-box {
 		margin-top: 15px;
 		margin-bottom: 0px;
@@ -7247,3 +7280,18 @@ section {
 		font-size: 16px;
 	}
 }
+
+@media only screen and (min-width: 990px) and (max-width: 1036px) {
+	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
+	    font-size: 16px;
+	}
+
+	.nav-button {
+		width: 48px;
+		margin-top: 13px;
+	}
+
+	.nav-button span {
+		height: 6px;
+	}
+}*/
