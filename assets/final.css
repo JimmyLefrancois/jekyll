@@ -7242,6 +7242,18 @@ section {
 	.nav-button span {
 		height: 6px;
 	}
+
+	.project-box p {
+		font-size: 16px;
+	}
+
+	.pd-holder h5 {
+		font-size: 14px;
+	}
+
+	.project-box {
+		margin-top: -5px;
+	}
 }
 
 /*@media only screen and  (min-width: 736px) and (max-width: 990px) {
