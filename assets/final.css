@@ -7227,6 +7227,10 @@ section {
 	.to-top {
 		width: 48px;
 	}
+
+	.parallax-section h2 {
+    font-size: 19px;
+}
 }
 
 @media (min-width: 992px) {
