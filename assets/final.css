@@ -7205,3 +7205,18 @@ section {
 		height: 6px;
 	}
 }
+
+@media only screen and  (max-width: 360px) {
+	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
+	    font-size: 19px;
+	}
+
+	.nav-button {
+		width: 48px;
+		margin-top: 13px;
+	}
+
+	.nav-button span {
+		height: 6px;
+	}
+}
