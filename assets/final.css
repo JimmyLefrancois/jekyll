@@ -7220,3 +7220,10 @@ section {
 		height: 6px;
 	}
 }
+
+@media only screen and  (max-width: 990px) {
+	.project-box {
+		margin-top: 15px;
+		margin-bottom: 0px;
+	}
+}
