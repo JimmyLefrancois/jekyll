@@ -7254,6 +7254,10 @@ section {
 	.project-box {
 		margin-top: -5px;
 	}
+	
+	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
+    	font-size: 14px;
+	}
 }
 
 /*@media only screen and  (min-width: 736px) and (max-width: 990px) {
