@@ -7227,6 +7227,14 @@ section {
 		margin-bottom: 0px;
 	}
 
+	.project-box h3 {
+		padding-bottom: 0;
+	}
+
+	.project-box p {
+		margin-top: 43px;
+	}
+
 	.pd-holder h5 {
 		font-size: 16px;
 	}
