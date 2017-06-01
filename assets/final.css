@@ -7216,8 +7216,8 @@ section {
 
 	.project-box p {
 		margin-top: 43px;
-		font-size: 19px;
-		line-height: 26px;
+	    font-size: 23px;
+	    line-height: 29px;
 	}
 
 	.pd-holder h5 {
@@ -7229,7 +7229,7 @@ section {
 	}
 
 	.parallax-section h2 {
-    font-size: 19px;
+    font-size: 23px;
 }
 }
 
