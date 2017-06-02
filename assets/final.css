@@ -7274,11 +7274,30 @@ section {
 		padding: 0;
 	}
 
+	.content-logo {
+	    margin-top: 20px;
+	}
+
+	.logo-holder a img {
+	    width: 170px;
+	    margin-top: -7px;
+	    height: auto;
+	}
+
 }
 
 @media (min-width: 992px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 		font-size: 16px;
+	}
+
+	.logo-holder a img {
+	    float: left;
+	    width: auto;
+	    height: 100%;
+	}
+	.content-logo {
+	    margin-top: 0px;
 	}
 
 	.contact-list li a, .contact-list li span {
