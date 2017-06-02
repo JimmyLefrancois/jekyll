@@ -7248,6 +7248,7 @@ section {
 		color: #FFF;
 		border-bottom: 1px solid #FFF;
 		background: #1c2346;
+		padding: 25px 22px;
 	}
 
 	nav li a:hover {
@@ -7267,7 +7268,7 @@ section {
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1036px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 		font-size: 16px;
 	}
@@ -7313,6 +7314,7 @@ section {
 		color: #000;
 		border-bottom: none;
 		background: #FFF;
+		padding: 10px 22px;
 	}
 
 	nav li a:hover {
