@@ -7309,6 +7309,7 @@ section {
 
 	.project-box {
 		margin-top: -5px;
+	    margin-bottom: 10px;
 	}
 
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
