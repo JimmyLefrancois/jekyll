@@ -7253,6 +7253,10 @@ section {
 	    padding-left: 235px;
 	}
 
+	.mfp-title {
+		font-size: 19px;
+	}
+
 	nav li a {
 		font-size: 20px;
 		width: 100%;
@@ -7296,6 +7300,10 @@ section {
 @media (min-width: 992px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 		font-size: 16px;
+	}
+
+	.mfp-title {
+		font-size: 13px;
 	}
 
 	nav {
