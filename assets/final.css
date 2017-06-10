@@ -6966,10 +6966,10 @@ article .btn {
 }
 nav ul li  , nav ul li ul li , nav li ul li > ul    {
 	float:left;
-	width:100%;
+	width:101%;
 	margin-bottom:10px;
 	text-align:left;
-	left:0;
+	left:-2px;
 	opacity:1;
 	right: 0;
 }
