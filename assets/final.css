@@ -7247,13 +7247,10 @@ section {
 		font-size: 23px;
 	}
 
-	nav li ul li {
-		padding-left: 200px;
-	}
-
 	nav li ul li a {
 		text-align: left;
 	    color: #949494;
+	    padding-left: 200px;
 	}
 
 	nav li a {
