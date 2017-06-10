@@ -6966,16 +6966,16 @@ article .btn {
 }
 nav ul li  , nav ul li ul li , nav li ul li > ul    {
 	float:left;
-	width:101%;
+	width:100%;
 	margin-bottom:10px;
 	text-align:left;
-	left:-2px;
+	left:0;
 	opacity:1;
 	right: 0;
 }
 nav li ul {
 	margin: 0;
-	padding-left:20px;
+	padding-left:0px;
 	opacity: 1;
 	visibility: hidden;
 	position: relative;
@@ -7250,7 +7250,7 @@ section {
 	nav li ul li a {
 		text-align: left;
 	    color: #949494;
-	    padding-left: 200px;
+	    padding-left: 235px;
 	}
 
 	nav li a {
