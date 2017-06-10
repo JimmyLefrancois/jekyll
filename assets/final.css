@@ -7198,7 +7198,6 @@ section {
 }
 }
 
-@media (min-width: 768px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 		font-size: 23px;
 	}
@@ -7254,9 +7253,8 @@ section {
 		text-align: center;
 		color: #FFF;
 		border-bottom: 1px solid #FFF;
-		background: #194353;
+		background: #222222;
 		padding: 25px 22px;
-		font-family: Georgia, "Times New Roman", Times, serif;
 	}
 
 	nav li a:hover {
@@ -7270,7 +7268,7 @@ section {
 
 	.nav-holder {
 		height: auto;
-		background: #194353;
+		background: #222222;
 		padding: 0;
 	}
 
@@ -7289,11 +7287,14 @@ section {
 	    font-size: 33px;
 	}
 
-}
-
 @media (min-width: 992px) {
 	.grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
 		font-size: 16px;
+	}
+
+	nav {
+		float: left;
+		width: auto;
 	}
 	
 	.footer-social li a {
@@ -7353,6 +7354,7 @@ section {
 		border-bottom: none;
 		background: #FFF;
 		padding: 10px 22px;
+		font-family: 'FuturaPT-Book';
 	}
 
 	nav li a:hover {
