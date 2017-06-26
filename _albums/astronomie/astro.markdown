@@ -34,6 +34,9 @@ photos:
  - path: lune-depuis-vercor.jpg
    alt: lune-depuis-vercor
    description: La lune depuis le Vercors.
+ - path: coeur-voie-lactee-toutes-aures.jpg
+   alt: coeur-voie-lactee-toutes-aures
+   description: Le coeur de la Voie Lactée depuis le col de Toutes Aures
 description: Toutes mes photos d'astronomie - France - Isère - Grenoble - Photographies - Nouvelle Zélande
 description_album: Toutes mes photos d'astronomie
 details: Toutes mes photos de ciels étoilés, de Voie Lactée et de galaxies. C'est mon genre de photos préferé, celui qui permet de voir l'invisible à nos yeux. Je suis impatient de découvrir et de photographier le ciel réputé de la Nouvelle Zélande !
