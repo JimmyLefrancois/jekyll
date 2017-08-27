@@ -15,14 +15,17 @@
 			<nav>
 				<ul>
 					<li><a href="{{site.url}}">Accueil</a></li>
-					<li>
+					{% if page.url != '/' %}
+						<li><a href="{{site.url}}">Albums</a></li>
+					{% endif %}
+					<!--<li>
 						<a>Albums</a>
 						<ul>
 									{% for album in site.albums reversed | sort 'date' %}
 										<li><a href="{{ album.url }}" alt="{{ album.title }}">{{ album.title }}</a></li>
 									{% endfor %}
 						</ul>
-					</li>
+					</li>-->
 					<!-- <li><a href="{{ site.url | append: '/live.html' }}">En live</a></li> -->
 					<li><a href="{{site.url}}/contact.html">Contact</a></li>
 				</ul>
