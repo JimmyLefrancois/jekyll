@@ -7,6 +7,9 @@ tag1: Astronomie
 tag2: Nocturne
 date: 2017-05-22 00:00:00 +0200
 photos:
+ - path: voie-lactee-ti-point-nouvelle-zelande.jpg
+   alt: voie-lactee-ti-point-nouvelle-zelande
+   description: La Voie Lactée depuis Ti Point en Nouvelle-Zélande.
  - path: ciel-etoiles-arbres-belledonne.jpg
    alt: ciel-etoiles-arbres-belledonne
    description: Panorama ciel étoilé à Belledonne
