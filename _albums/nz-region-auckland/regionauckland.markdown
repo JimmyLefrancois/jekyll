@@ -50,7 +50,7 @@ photos:
    alt: vue-sur-plage-tawharanui-nouvelle-zelande
    description: La plage du Tawharanui Regional Park en Nouvelle-Zélande.
 description: Toutes mes photos de la région d'Auckland - Auckland - District - Nouvelle Zélande - New-Zealand - New Zealand - Photographies - Photography - Photographie
-description_album: Toutes mes photos de la région d'Auckland
+description_album: Toutes mes photos de la région d'Auckland en Nouvelle-Zélande.
 details: Toutes mes photos de la région d'Auckland en Nouvelle-Zélande, paysages magnifiques, cascades et plages sauvages !
 datephoto: 2017-2018
 ---
