@@ -19,7 +19,7 @@
             </div>
 		</div>
 
-			<div class="gallery-items grid-big-pad vis-port-info">
+			<div class="gallery-items grid-big-pad vis-port-info" id="albums">
 				{% assign albums = site.albums | sort: 'date' %}
 				{% for album in albums reversed %}
 
