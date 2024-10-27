@@ -1,45 +1,48 @@
 <div class="content-holder elem scale-bg2 transition3">
-	<div class="content">
-		<section>
+    <div class="content">
+        <section>
 
-		<div class="container">
-			<div class="content-logo">
-				<!--  <h1>{{ site.title }}</h1>-->
-				<img src="{{ "/assets/images/logo.png" | relative_url }}" alt="Logo du site Jimmy Lefrançois Photography" title="Logo du site Jimmy Lefrançois Photography">
-			</div>
-            <div class="separator separator-image"><img  src='{{ "/assets/images/separator2.png" | relative_url }}' alt="Separateur de contenu"></div>
-            <h1 class="subtitle front">Photographies de Jimmy Lefrançois</h1><h2 class="subtitle front">Photos de paysages et de ciels étoilés. </h2>
-            <div class="filter-holder inline-filters">
-                <div class="gallery-filters">
-                    <a href="#" class="gallery-filter gallery-filter-active"  data-filter="*">Tous les Albums</a>
-                    {% for tag in site.data.tags %}
-                    	<a href="" class="gallery-filter" data-filter=".{{ tag.label }}">{{ tag.label }}</a>
-                    {% endfor %}
+            <div class="container">
+                <div class="content-logo">
+                    <!--  <h1>{{ site.title }}</h1>-->
+                    <img src="{{ "/assets/images/logo.png" | relative_url }}" alt="Logo du site Jimmy Lefrançois
+                    Photography" title="Logo du site Jimmy Lefrançois Photography">
+                </div>
+                <div class="separator separator-image"><img src='{{ "/assets/images/separator2.png" | relative_url }}'
+                                                            alt="Separateur de contenu"></div>
+                <h1 class="subtitle front">Photographies de Jimmy Lefrançois</h1>
+                <h2 class="subtitle front">Photos de paysages et de ciels étoilés. </h2>
+                <div class="filter-holder inline-filters">
+                    <div class="gallery-filters">
+                        <a href="#" class="gallery-filter gallery-filter-active" data-filter="*">Toutes mes photos</a>
+                        {% for tag in site.data.tags %}
+                        <a href="" class="gallery-filter" data-filter=".{{ tag.label }}">{{ tag.label }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-		</div>
+        </section>
 
-			<div class="gallery-items grid-big-pad vis-port-info" id="albums">
-				{% assign albums = site.albums | sort: 'date' %}
-				{% for album in albums reversed %}
 
-					<div class="gallery-item {{ album.tag1 }} {{ album.tag2 }}">
-						<div class="grid-item-holder">
-							<div class="box-item">
-								<a href="{{ album.url }}" alt="Album {{ album.title }}" title="Album {{ album.title }}">
-								<span class="overlay"></span>
-								<img src="/{{ album.layout }}/{{ album.photospath }}/photos/cover_min.jpg" alt="Album {{ album.title }}" title="Album {{ album.title }}"><br>
-								</a>
-							</div>
-							<div class="grid-item ">
-								<h3><a href="{{ album.url }}" class="ajax portfolio-link">{{ album.title }}</a></h3>
-								<span>{{ album.tag1 }}  /  {{ album.tag2 }}</span>
-							</div>
-						</div>
-					</div>
-
-				{% endfor %}
-			</div>
-		</section>
-	</div>
+        <section id="sec1">
+            <div class="container column-container">
+                <div class="row">
+                    <!--  project images -->
+                    <div class="gallery-items vertical-gallery popup-gallery four-columns-box">
+                        {% for photo in site.photos %}
+                        {% for photolol in photo.photos %}
+                        <div class="gallery-item {{ photolol.tag1 }} {{ photolol.tag2 }}">
+                            <a href="photos/photos/max/{{ photolol.path}}" alt="{{ photolol.alt }}" data-index="{{ forloop.index }}"
+                               title="{{ photolol.description }}">
+                                <img src="photos/photos/min/{{ photolol.path}}" class="respimg" alt="{{ photolol.alt }}"
+                                     title="{{ photolol.description }}">
+                            </a>
+                        </div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>

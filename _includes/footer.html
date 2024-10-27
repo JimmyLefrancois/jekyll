@@ -1,33 +1,57 @@
-			<div class="share-container  isShare"  data-share="['facebook','pinterest']"></div>
-			</div>
+<div class="share-container  isShare" data-share="['facebook','pinterest']"></div>
+</div>
 
-			<div class="left-decor"></div>
-			<div class="right-decor"></div>
+<div class="left-decor"></div>
+<div class="right-decor"></div>
 
-			<footer>
-				<div class="policy-box">
-					<span>© Thème : Outdoor {{ site.time | date: "%Y" }}.</span>
-					<ul>
-						<li><a href="mailto:{{  site.email }}">{{  site.email }}</a></li>
-						<li>- Fait avec <a target="_blank" href="https://jekyllrb.com">Jekyll</a> et <a target="_blank" href="https://pages.github.com/">Github Pages</a></li>
-					</ul>
-				</div>
-				<!-- footer social -->
-				<div class="footer-social">
-					<ul>
-						<li><a target="_blank" href="{{ site.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-						<li><a target="_blank" href="{{ site.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
-					</ul>
-				</div>
-				<!-- footer social end -->
-				<div class="to-top vistotop"><i class="fa fa-angle-up"></i></div>
-			</footer>
+<footer>
+    <div class="policy-box">
+        <span>© Thème : Outdoor {{ site.time | date: "%Y" }}.</span>
+        <ul>
+            <li><a href="mailto:{{  site.email }}">{{ site.email }}</a></li>
+            <li>- Fait avec <a target="_blank" href="https://jekyllrb.com">Jekyll</a> et <a target="_blank"
+                                                                                            href="https://pages.github.com/">Github
+                Pages</a></li>
+        </ul>
+    </div>
+    <!-- footer social -->
+    <div class="footer-social">
+        <ul>
+            <li><a target="_blank" href="{{ site.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a target="_blank" href="{{ site.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+    </div>
+    <!-- footer social end -->
+    <div class="to-top vistotop"><i class="fa fa-angle-up"></i></div>
+</footer>
 
-		</div>
+</div>
 
-		<script src='{{ "/assets/scripts.js" | relative_url }}'></script>
-		{% if jekyll.environment == 'production' %}
-			{% include analytics.html %}
-		{% endif %}
+<script src='{{ "/assets/scripts.js" | relative_url }}'></script>
+
+
+<script>
+    $('.popup-gallery').on('mfpOpen', function (e /*, params */) {
+        window.history.replaceState(null, '', `#${$.magnificPopup.instance.currItem.el.context.dataset.index}`);
+    });
+
+    $('.popup-gallery').on('mfpClose', function (e /*, params */) {
+        history.replaceState(null, '', window.location.pathname);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const url = new URL(window.location);
+        const galleryLinks = document.querySelectorAll('.gallery-items a');
+        galleryLinks.forEach((link, index) => {
+            let hashLink = '#' + link.dataset.index
+            if (url.hash === hashLink) {
+                $('.popup-gallery').magnificPopup('open', link.dataset.index -1);
+            }
+        });
+    });
+</script>
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
 </body>
 </html>

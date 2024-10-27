@@ -5458,6 +5458,7 @@ footer {
 .gallery-item, .grid-sizer {
 	width: 25%;
 	position:relative;
+    padding: 10px;
 }
 .gallery-item-second,
 .grid-sizer-second {
@@ -6169,7 +6170,7 @@ figure img {
 .project-box  , .vertical-gallery{
 	float:left;
 	width:100%;
-	padding:0 20px;
+	padding:0 !important;
 }
 .project-box {
 	margin-bottom:40px;
@@ -6233,6 +6234,13 @@ figure img {
 }
 .two-columns-box  .box-item{
 	width:50%;
+	padding:0 10px 0 5px;
+}
+#sec1 {
+    padding: 0 !important;
+}
+.four-columns-box  .box-item{
+	width:25%;
 	padding:0 10px 0 5px;
 }
 /*------ share------------------------------------------------*/

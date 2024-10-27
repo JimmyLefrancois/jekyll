@@ -41,6 +41,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
 collections:
-  albums:
+  photos:
     output: true
-    layout: project
