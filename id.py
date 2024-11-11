@@ -26,10 +26,6 @@ def printResponse(response1):
 # URL de la première requête
 url = "https://www.ornitho.com/"
 
-headers_first_request = {
-
-}
-
 # Charger l'image
 with open("_L5A4729-Modifier.jpg", "rb") as img_file:
     data_first_request = {
@@ -72,9 +68,11 @@ with open("_L5A4729-Modifier.jpg", "rb") as img_file:
         "validez": "Suivant",
     }
 
+
+    print('3s sleep')
     time.sleep(3)
+    print('Envoi requête n°2')
     response2 = requests.post(url, headers={}, data=data_second_request)
-#     printResponse(response2)
     tree = html.fromstring(response2.text)
     birdName = tree.xpath('//a[@class="fiche"]/text()')[0]
     probabilite = tree.xpath('//div[@class="pour100esp"]/text()')[1]
