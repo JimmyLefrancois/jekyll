@@ -8,6 +8,8 @@ from datetime import datetime
 from ruamel.yaml import YAML
 from io import StringIO
 from PIL import Image
+from slugify import slugify
+import uuid
 
 # Fonction pour envoyer la première requête et extraire l'image
 def send_first_request(url, image_path):
@@ -198,8 +200,18 @@ def process_images_in_folder(folder_path, url, excel_file):
             bird_name, probabilityString, probabilityFloat = send_second_request(url, image_name)
             print(f'Il s\'agit à {probabilityString} d\'un {bird_name} pour l\'image {image_filename}')
 
-            # Si la probabilité est inférieure à 90%, ajouter l'image aux résultats
-#             if probabilityFloat < 90:
+            if probabilityFloat < 90:
+                # Déplace l'image dans 'manualActions'
+                manual_actions_folder = 'C:/Users/Jiphie/Desktop/jekyll/_photos/photos/manualActions'
+                shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
+                print(f"Image déplacée vers 'manualActions' : {image_filename}")
+
+            bird_slug = slugify(bird_name)
+            unique_id = str(uuid.uuid4())  # Génère un ID unique
+            new_name = f"{bird_slug}-{unique_id}.jpg"  # Combine le slug et l'ID unique
+            new_path = os.path.join(folder_path, new_name)
+            os.rename(image_path, new_path)
+
             new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": bird_name, "Probabilité": probabilityFloat}])
             df = pd.concat([df, new_row], ignore_index=True)
 
