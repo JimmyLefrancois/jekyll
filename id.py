@@ -1,18 +1,11 @@
+import os
 import requests
-from datetime import datetime
-import secrets
+import pandas as pd
 from lxml import html
 import time
 
 # Fonction pour envoyer la première requête et extraire l'image
 def send_first_request(url, image_path):
-    """
-    Envoie la première requête POST avec l'image, récupère la réponse et extrait la valeur de 'Name_img'.
-
-    :param url: URL du site.
-    :param image_path: Chemin du fichier image à envoyer.
-    :return: La valeur de 'Name_img' récupérée du serveur.
-    """
     with open(image_path, "rb") as img_file:
         data = {
             "Name_img": "",
@@ -32,26 +25,16 @@ def send_first_request(url, image_path):
             "NOM_DE_FICHIER": img_file
         }
 
-        # Envoi de la première requête
-        print('Envoi requête n°1')
+#         print(f'Envoi requête n°1 pour {image_path}')
         response1 = requests.post(url, headers={}, data=data, files=files)
 
-        # Extraire le nom de l'image retourné par le serveur
         tree1 = html.fromstring(response1.text)
         image_name_from_server = tree1.xpath('//input[@id="Name_img"]/@value')[0]
 
         return image_name_from_server
 
-# Fonction pour envoyer la deuxième requête avec les données extraites
+# Fonction pour envoyer la deuxième requête et récupérer les résultats
 def send_second_request(url, image_name):
-    """
-    Envoie la deuxième requête POST avec les paramètres requis.
-
-    :param url: URL du site.
-    :param image_name: Le nom de l'image récupéré lors de la première requête.
-    :return: Les informations extraites du serveur après la deuxième requête.
-    """
-    # Données de la deuxième requête
     data = {
         "Name_img": image_name,
         "level": "2",
@@ -68,37 +51,56 @@ def send_second_request(url, image_name):
         "validez": "Suivant",
     }
 
-    # Attente de 3 secondes avant d'envoyer la deuxième requête
-    print('3s sleep')
-    time.sleep(3)
-    print('Envoi requête n°2')
+#     print('1s sleep')
+    time.sleep(1)
+#     print('Envoi requête n°2')
 
-    # Envoi de la deuxième requête
     response2 = requests.post(url, headers={}, data=data)
 
-    # Extraire le nom de l'oiseau et la probabilité
     tree2 = html.fromstring(response2.text)
     bird_name = tree2.xpath('//a[@class="fiche"]/text()')[0]
-    probability = tree2.xpath('//div[@class="pour100esp"]/text()')[1]
+    probabilityString = tree2.xpath('//div[@class="pour100esp"]/text()')[1]
+    probabilityFloat = float(probabilityString.replace(' %', ''))
 
-    return bird_name, probability
+    return bird_name, probabilityString, probabilityFloat
 
-# Fonction principale pour exécuter le processus complet
+# Fonction pour traiter les images et enregistrer celles avec une probabilité < 90% dans un fichier Excel
+def process_images_in_folder(folder_path, url, excel_file):
+    # Créer un DataFrame vide pour les photos à ajouter
+    df = pd.DataFrame(columns=["Nom du fichier", "Nom de l'oiseau", "Probabilité"])
+
+    for image_filename in os.listdir(folder_path):
+        if image_filename.lower().endswith(('.jpg', '.jpeg')):
+            image_path = os.path.join(folder_path, image_filename)
+
+            image_name = send_first_request(url, image_path)
+            bird_name, probabilityString, probabilityFloat = send_second_request(url, image_name)
+            print(f'Il s\'agit à {probabilityString} d\'un {bird_name} pour l\'image {image_filename}')
+
+            # Si la probabilité est inférieure à 90%, ajouter l'image aux résultats
+#             if probabilityFloat < 90:
+            new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": bird_name, "Probabilité": probabilityFloat}])
+            df = pd.concat([df, new_row], ignore_index=True)
+
+    # Sauvegarder les résultats dans un fichier Excel
+    df.to_excel(excel_file, index=False)
+    print(f"Les résultats ont été enregistrés dans {excel_file}")
+
+# Fonction principale
 def main():
-    """
-    Exécute le processus complet des deux requêtes et affiche les résultats de la deuxième requête.
-    """
     url = "https://www.ornitho.com/"
+    folder_path = "C:/Users/Jiphie/Desktop/Photos/script"  # Remplace par ton chemin de dossier
+    excel_file = "resultats_oiseaux.xlsx"  # Nom du fichier Excel de sortie
 
-    # Envoi de la première requête et récupération du nom de l'image
-    image_name = send_first_request(url, "_L5A4729-Modifier.jpg")
+    process_images_in_folder(folder_path, url, excel_file)
 
-    # Envoi de la deuxième requête et récupération des informations sur l'oiseau
-    bird_name, probability = send_second_request(url, image_name)
-
-    # Afficher le résultat final
-    print(f'Il s\'agit à {probability} d\'un {bird_name}')
-
-# Exécution de la fonction principale
+# Exécution du script
 if __name__ == "__main__":
     main()
+
+
+
+
+
+# todo trouver max % avant doute, si doute -> fichier de logs avec nom fichier + guessName + guess%
+# Si c'est > au % de doute, on ajoute la photo au fichier photos.md en se servant du nom de l'oiseau pour la description
