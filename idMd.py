@@ -10,6 +10,7 @@ from io import StringIO
 from PIL import Image
 from slugify import slugify
 import uuid
+from ultralytics import YOLO
 
 # Fonction pour envoyer la première requête et extraire l'image
 def send_first_request(url, image_path):
@@ -194,11 +195,48 @@ def process_images_in_folder(folder_path, url, excel_file):
 
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
+
             image_path = os.path.join(folder_path, image_filename)
 
-            image_name = send_first_request(url, image_path)
+            model = YOLO("yolov8m.pt")
+            results = model.predict(image_path)
+            image = Image.open(image_path)
+            result = results[0]
+            box = result.boxes
+            cords = box.xyxy[0].tolist()
+
+            # Calculer la largeur et la hauteur actuelles
+            x_min, y_min, x_max, y_max = cords
+            width = x_max - x_min
+            height = y_max - y_min
+
+            max_side = max(width, height)
+
+            # Calculer les nouveaux coins pour le carré
+            x_center = (x_min + x_max) / 2
+            y_center = (y_min + y_max) / 2
+            x_min_new = int(x_center - max_side / 2)
+            x_max_new = int(x_center + max_side / 2)
+            y_min_new = int(y_center - max_side / 2)
+            y_max_new = int(y_center + max_side / 2)
+
+            # Assurer que les coordonnées restent dans les limites de l'image
+            x_min_new = max(0, x_min_new)
+            y_min_new = max(0, y_min_new)
+            x_max_new = min(image.width, x_max_new)
+            y_max_new = min(image.height, y_max_new)
+
+            # Recadrage de l'image autour des coordonnées
+            cropped_image = image.crop((x_min_new, y_min_new, x_max_new, y_max_new))
+
+            # Chemin pour sauvegarder l'image recadrée
+            cropped_image_path = "C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg"
+            cropped_image.save(cropped_image_path)
+
+            image_name = send_first_request(url, cropped_image_path)
             bird_name, probabilityString, probabilityFloat = send_second_request(url, image_name)
             print(f'Il s\'agit à {probabilityString} d\'un {bird_name} pour l\'image {image_filename}')
+            #os.remove('C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg')
 
             if probabilityFloat < 90:
                 # Déplace l'image dans 'manualActions'
@@ -236,14 +274,6 @@ def main():
         target_width=800  # Largeur cible en pixels
     )
 
-
 # Exécution du script
 if __name__ == "__main__":
     main()
-
-
-
-
-
-# todo trouver max % avant doute, si doute -> fichier de logs avec nom fichier + guessName + guess%
-# Si c'est > au % de doute, on ajoute la photo au fichier photos.md en se servant du nom de l'oiseau pour la description
