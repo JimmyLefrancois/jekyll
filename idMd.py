@@ -188,6 +188,8 @@ def resize_image(source_path, destination_path, target_width):
         resized_img.save(destination_path)
         print(f"Image redimensionnée et enregistrée dans {destination_path}")
 
+def bird_coords_from_image():
+
 # Fonction pour traiter les images et enregistrer celles avec une probabilité < 90% dans un fichier Excel
 def process_images_in_folder(folder_path, url, excel_file):
     # Créer un DataFrame vide pour les photos à ajouter
@@ -236,7 +238,7 @@ def process_images_in_folder(folder_path, url, excel_file):
             image_name = send_first_request(url, cropped_image_path)
             bird_name, probabilityString, probabilityFloat = send_second_request(url, image_name)
             print(f'Il s\'agit à {probabilityString} d\'un {bird_name} pour l\'image {image_filename}')
-            #os.remove('C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg')
+            os.remove('C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg')
 
             if probabilityFloat < 90:
                 # Déplace l'image dans 'manualActions'
