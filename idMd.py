@@ -89,7 +89,7 @@ def compress_images(directory):
                     img.save(source_path, format='PNG', compress_level=6)  # Compression sans perte pour PNG
                     print(f"Image {filename} compressée (PNG).")
 
-def update_markdown(directory, markdown_file, max_directory, min_directory, target_width=800):
+def update_markdown(directory, markdown_file, max_directory, min_directory, bird_names, target_width=800):
     """
     Met à jour un fichier Markdown avec des photos d'un répertoire, déplace les photos dans 'max',
     et redimensionne les photos pour les enregistrer dans 'min'.
@@ -120,17 +120,17 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, targ
 
     # Scanner les photos dans le répertoire
     new_photos = []
-    for filename in os.listdir(directory):
+    for index, filename in enumerate(os.listdir(directory), start=0):
         if filename.lower().endswith(('.jpg', '.jpeg', '.png')):  # Ajuster les extensions si nécessaire
             photo_path = os.path.basename(filename)
             if photo_path not in existing_paths:
                 # Ajouter la photo au fichier Markdown
                 new_photos.append({
                     'path': photo_path,
-                    'alt': '',
-                    'description': '',
-                    # 'alt': bird_name.replace("'", "\'"),
-                    # 'description': bird_name.replace("'", "\'"),
+                    # 'alt': '',
+                    # 'description': '',
+                    'alt': bird_names[index],
+                    'description': bird_names[index],
                     'tag1': 'Animaux',
                     'tag2': 'Oiseaux'
                 })
@@ -187,7 +187,7 @@ def resize_image(source_path, destination_path, target_width):
 
 # Fonction pour traiter les images et enregistrer celles avec une probabilité < 90%
 def process_images_in_folder(folder_path, url):
-
+    bird_names = []
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
 
@@ -201,6 +201,7 @@ def process_images_in_folder(folder_path, url):
 
             image_name = send_first_request(url, cropped_image_path)
             bird_name, probability_string, probability_float = send_second_request(url, image_name)
+            bird_names.append(bird_name.replace("'", "\'"))
             print(f'Il s\'agit à {probability_string} d\'un {bird_name} pour l\'image {image_filename}')
             os.remove('./_photos/photos/cropped_image.jpg')
 
@@ -211,7 +212,7 @@ def process_images_in_folder(folder_path, url):
                 print(f"Image déplacée vers 'manualActions' : {image_filename}")
             else:
                 rename_photo(bird_name, folder_path, image_path)
-
+    return bird_names
 
 def rename_photo(bird_name, folder_path, image_path):
     bird_slug = slugify(bird_name)
@@ -253,7 +254,7 @@ def main():
     url = "https://www.ornitho.com/"
     folder_path = "./_photos/photos/waitingRoom"  # Remplace par ton chemin de dossier
 
-    process_images_in_folder(folder_path, url)
+    bird_names = process_images_in_folder(folder_path, url)
 
     # Utilisation
     update_markdown(
@@ -261,6 +262,7 @@ def main():
         './_photos/photos.md',
         './_photos/photos/max',
         './_photos/photos/min',
+        bird_names,
         target_width=400  # Largeur cible en pixels
     )
 
