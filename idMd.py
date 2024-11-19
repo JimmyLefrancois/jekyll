@@ -183,8 +183,8 @@ def resize_image(source_path, destination_path, target_width):
         resized_img.save(destination_path)
         print(f"Image redimensionnée et enregistrée dans {destination_path}")
 
-# Fonction pour traiter les images et enregistrer celles avec une probabilité < 90% dans un fichier Excel
-def process_images_in_folder(folder_path, url, excel_file):
+# Fonction pour traiter les images et enregistrer celles avec une probabilité < 90%
+def process_images_in_folder(folder_path, url):
 
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
@@ -250,9 +250,8 @@ def bird_coords(image_path):
 def main():
     url = "https://www.ornitho.com/"
     folder_path = "./_photos/photos/waitingRoom"  # Remplace par ton chemin de dossier
-    excel_file = "resultats_oiseaux.xlsx"  # Nom du fichier Excel de sortie
 
-    process_images_in_folder(folder_path, url, excel_file)
+    process_images_in_folder(folder_path, url)
 
     # Utilisation
     update_markdown(
