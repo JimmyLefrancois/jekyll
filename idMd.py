@@ -127,10 +127,12 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, targ
                 # Ajouter la photo au fichier Markdown
                 new_photos.append({
                     'path': photo_path,
-                    'alt': 'Texte à remplacer',
+                    'alt': '',
                     'description': '',
-                    'tag1': '',
-                    'tag2': ''
+                    # 'alt': bird_name.replace("'", "\'"),
+                    # 'description': bird_name.replace("'", "\'"),
+                    'tag1': 'Animaux',
+                    'tag2': 'Oiseaux'
                 })
 
                 # Déplacer la photo vers le répertoire 'max'
@@ -207,8 +209,9 @@ def process_images_in_folder(folder_path, url):
                 manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
                 print(f"Image déplacée vers 'manualActions' : {image_filename}")
+            else:
+                rename_photo(bird_name, folder_path, image_path)
 
-            rename_photo(bird_name, folder_path, image_path)
 
 def rename_photo(bird_name, folder_path, image_path):
     bird_slug = slugify(bird_name)
@@ -216,7 +219,6 @@ def rename_photo(bird_name, folder_path, image_path):
     new_name = f"{bird_slug}-{unique_id}.jpg"  # Combine le slug et l'ID unique
     new_path = os.path.join(folder_path, new_name)
     os.rename(image_path, new_path)
-
 
 def transform_coords_to_square(cords, image):
     # Calculer la largeur et la hauteur actuelles
