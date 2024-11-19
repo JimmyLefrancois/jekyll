@@ -1,6 +1,5 @@
 import os
 import requests
-import pandas as pd
 from lxml import html
 import time
 import shutil
@@ -33,10 +32,9 @@ def send_first_request(url, image_path):
             "NOM_DE_FICHIER": img_file
         }
 
-#         print(f'Envoi requête n°1 pour {image_path}')
-        response1 = requests.post(url, headers={}, data=data, files=files)
+        response_from_first_request = requests.post(url, headers={}, data=data, files=files)
 
-        tree1 = html.fromstring(response1.text)
+        tree1 = html.fromstring(response_from_first_request.text)
         image_name_from_server = tree1.xpath('//input[@id="Name_img"]/@value')[0]
 
         return image_name_from_server
@@ -59,18 +57,15 @@ def send_second_request(url, image_name):
         "validez": "Suivant",
     }
 
-#     print('1s sleep')
     time.sleep(1)
-#     print('Envoi requête n°2')
 
-    response2 = requests.post(url, headers={}, data=data)
-
-    tree2 = html.fromstring(response2.text)
+    response_from_second_request = requests.post(url, headers={}, data=data)
+    tree2 = html.fromstring(response_from_second_request.text)
     bird_name = tree2.xpath('//a[@class="fiche"]/text()')[0]
-    probabilityString = tree2.xpath('//div[@class="pour100esp"]/text()')[1]
-    probabilityFloat = float(probabilityString.replace(' %', ''))
+    probability_string = tree2.xpath('//div[@class="pour100esp"]/text()')[1]
+    probability_float = float(probability_string.replace(' %', ''))
 
-    return bird_name, probabilityString, probabilityFloat
+    return bird_name, probability_string, probability_float
 
 def compress_images(directory):
     """
@@ -84,13 +79,13 @@ def compress_images(directory):
 
             with Image.open(source_path) as img:
                 # Déterminer le format de l'image
-                format = img.format
+                image_format = img.format
 
                 # Compresser selon le format
-                if format == 'JPEG':
+                if image_format == 'JPEG':
                     img.save(source_path, format='JPEG', optimize=True)
                     print(f"Image {filename} compressée (JPEG).")
-                elif format == 'PNG':
+                elif image_format == 'PNG':
                     img.save(source_path, format='PNG', compress_level=6)  # Compression sans perte pour PNG
                     print(f"Image {filename} compressée (PNG).")
 
@@ -188,92 +183,84 @@ def resize_image(source_path, destination_path, target_width):
         resized_img.save(destination_path)
         print(f"Image redimensionnée et enregistrée dans {destination_path}")
 
-def bird_coords_from_image():
-
 # Fonction pour traiter les images et enregistrer celles avec une probabilité < 90% dans un fichier Excel
 def process_images_in_folder(folder_path, url, excel_file):
-    # Créer un DataFrame vide pour les photos à ajouter
-    df = pd.DataFrame(columns=["Nom du fichier", "Nom de l'oiseau", "Probabilité"])
 
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
 
             image_path = os.path.join(folder_path, image_filename)
+            cords, image_to_crop = bird_coords(image_path)
+            x_max_new, x_min_new, y_max_new, y_min_new = transform_coords_to_square(cords, image_to_crop)
+            cropped_image = image_to_crop.crop((x_min_new, y_min_new, x_max_new, y_max_new))
 
-            model = YOLO("yolov8m.pt")
-            results = model.predict(image_path)
-            image = Image.open(image_path)
-            result = results[0]
-            box = result.boxes
-            cords = box.xyxy[0].tolist()
-
-            # Calculer la largeur et la hauteur actuelles
-            x_min, y_min, x_max, y_max = cords
-            width = x_max - x_min
-            height = y_max - y_min
-
-            max_side = max(width, height)
-
-            # Calculer les nouveaux coins pour le carré
-            x_center = (x_min + x_max) / 2
-            y_center = (y_min + y_max) / 2
-            x_min_new = int(x_center - max_side / 2)
-            x_max_new = int(x_center + max_side / 2)
-            y_min_new = int(y_center - max_side / 2)
-            y_max_new = int(y_center + max_side / 2)
-
-            # Assurer que les coordonnées restent dans les limites de l'image
-            x_min_new = max(0, x_min_new)
-            y_min_new = max(0, y_min_new)
-            x_max_new = min(image.width, x_max_new)
-            y_max_new = min(image.height, y_max_new)
-
-            # Recadrage de l'image autour des coordonnées
-            cropped_image = image.crop((x_min_new, y_min_new, x_max_new, y_max_new))
-
-            # Chemin pour sauvegarder l'image recadrée
-            cropped_image_path = "C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg"
+            cropped_image_path = "./_photos/photos/cropped_image.jpg"
             cropped_image.save(cropped_image_path)
 
             image_name = send_first_request(url, cropped_image_path)
-            bird_name, probabilityString, probabilityFloat = send_second_request(url, image_name)
-            print(f'Il s\'agit à {probabilityString} d\'un {bird_name} pour l\'image {image_filename}')
-            os.remove('C:/Users/Jiphie/Desktop/jekyll/_photos/photos/cropped_image.jpg')
+            bird_name, probability_string, probability_float = send_second_request(url, image_name)
+            print(f'Il s\'agit à {probability_string} d\'un {bird_name} pour l\'image {image_filename}')
+            os.remove('./_photos/photos/cropped_image.jpg')
 
-            if probabilityFloat < 90:
+            if probability_float < 90:
                 # Déplace l'image dans 'manualActions'
-                manual_actions_folder = 'C:/Users/Jiphie/Desktop/jekyll/_photos/photos/manualActions'
+                manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
                 print(f"Image déplacée vers 'manualActions' : {image_filename}")
 
-            bird_slug = slugify(bird_name)
-            unique_id = str(uuid.uuid4())  # Génère un ID unique
-            new_name = f"{bird_slug}-{unique_id}.jpg"  # Combine le slug et l'ID unique
-            new_path = os.path.join(folder_path, new_name)
-            os.rename(image_path, new_path)
+            rename_photo(bird_name, folder_path, image_path)
 
-            new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": bird_name, "Probabilité": probabilityFloat}])
-            df = pd.concat([df, new_row], ignore_index=True)
+def rename_photo(bird_name, folder_path, image_path):
+    bird_slug = slugify(bird_name)
+    unique_id = str(uuid.uuid4())  # Génère un ID unique
+    new_name = f"{bird_slug}-{unique_id}.jpg"  # Combine le slug et l'ID unique
+    new_path = os.path.join(folder_path, new_name)
+    os.rename(image_path, new_path)
 
-    # Sauvegarder les résultats dans un fichier Excel
-    df.to_excel(excel_file, index=False)
-    print(f"Les résultats ont été enregistrés dans {excel_file}")
 
-# Fonction principale
+def transform_coords_to_square(cords, image):
+    # Calculer la largeur et la hauteur actuelles
+    x_min, y_min, x_max, y_max = cords
+    width = x_max - x_min
+    height = y_max - y_min
+    max_side = max(width, height)
+    # Calculer les nouveaux coins pour le carré
+    x_center = (x_min + x_max) / 2
+    y_center = (y_min + y_max) / 2
+    x_min_new = int(x_center - max_side / 2)
+    x_max_new = int(x_center + max_side / 2)
+    y_min_new = int(y_center - max_side / 2)
+    y_max_new = int(y_center + max_side / 2)
+    # Assurer que les coordonnées restent dans les limites de l'image
+    x_min_new = max(0, x_min_new)
+    y_min_new = max(0, y_min_new)
+    x_max_new = min(image.width, x_max_new)
+    y_max_new = min(image.height, y_max_new)
+    return x_max_new, x_min_new, y_max_new, y_min_new
+
+def bird_coords(image_path):
+    model = YOLO("yolov8m.pt")
+    results = model.predict(image_path)
+    image = Image.open(image_path)
+    result = results[0]
+    box = result.boxes
+    cords = box.xyxy[0].tolist()
+    return cords, image
+
 def main():
     url = "https://www.ornitho.com/"
-    folder_path = "C:/Users/Jiphie/Desktop/jekyll/_photos/photos/waitingRoom"  # Remplace par ton chemin de dossier
+    folder_path = "./_photos/photos/waitingRoom"  # Remplace par ton chemin de dossier
     excel_file = "resultats_oiseaux.xlsx"  # Nom du fichier Excel de sortie
 
     process_images_in_folder(folder_path, url, excel_file)
 
     # Utilisation
     update_markdown(
-        'C:/Users/Jiphie/Desktop/jekyll/_photos/photos/waitingRoom',
-        'C:/Users/Jiphie/Desktop/jekyll/_photos/photos.md',
-        'C:/Users/Jiphie/Desktop/jekyll/_photos/photos/max',
-        'C:/Users/Jiphie/Desktop/jekyll/_photos/photos/min',
-        target_width=800  # Largeur cible en pixels
+        './_photos/photos/waitingRoom',
+        './_photos/photos.md',
+        './_photos/photos/max',
+        './_photos/photos/min',
+        target_width=400  # Largeur cible en pixels
     )
 
 # Exécution du script
