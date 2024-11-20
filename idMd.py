@@ -132,7 +132,8 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
                     'alt': bird_names[index],
                     'description': bird_names[index],
                     'tag1': 'Animaux',
-                    'tag2': 'Oiseaux'
+                    'tag2': 'Oiseaux',
+                    'tag3': 'Nature'
                 })
 
                 # Déplacer la photo vers le répertoire 'max'
