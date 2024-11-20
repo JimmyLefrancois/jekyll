@@ -4,6 +4,7 @@ from lxml import html
 import time
 import shutil
 from datetime import datetime
+import pandas as pd
 from ruamel.yaml import YAML
 from io import StringIO
 from PIL import Image
@@ -187,7 +188,8 @@ def resize_image(source_path, destination_path, target_width):
         print(f"Image redimensionnée et enregistrée dans {destination_path}")
 
 # Fonction pour traiter les images et enregistrer celles avec une probabilité < 90%
-def process_images_in_folder(folder_path, url):
+def process_images_in_folder(folder_path, url, excel_file):
+    df = pd.DataFrame(columns=["Nom du fichier", "Nom de l'oiseau", "Probabilité"])
     bird_names = []
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
@@ -211,9 +213,13 @@ def process_images_in_folder(folder_path, url):
                 manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
                 shutil.move(cropped_image_path, os.path.join(manual_actions_folder, image_filename +"cropped_image.jpg"))
+                new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": bird_name, "Probabilité": probability_float}])
+                df = pd.concat([df, new_row], ignore_index=True)
                 print(f"Images déplacées vers 'manualActions' : {image_filename}")
             else:
                 rename_photo(bird_name, folder_path, image_path)
+
+    df.to_excel(excel_file, index=False)
     return bird_names
 
 def rename_photo(bird_name, folder_path, image_path):
@@ -255,8 +261,9 @@ def bird_coords(image_path):
 def main():
     url = "https://www.ornitho.com/"
     folder_path = "./_photos/photos/waitingRoom"  # Remplace par ton chemin de dossier
+    excel_file = "resultats_oiseaux.xlsx"
 
-    bird_names = process_images_in_folder(folder_path, url)
+    bird_names = process_images_in_folder(folder_path, url, excel_file)
 
     # Utilisation
     update_markdown(
