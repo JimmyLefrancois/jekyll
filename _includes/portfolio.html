@@ -6,7 +6,7 @@
                 <div class="content-logo">
                     <!--  <h1>{{ site.title }}</h1>-->
                     <img src="{{ "/assets/images/logo.png" | relative_url }}" alt="Logo du site Jimmy Lefrançois
-                    Photography" title="Logo du site Jimmy Lefrançois Photography">
+                    Photographie" title="Logo du site Jimmy Lefrançois Photographie">
                 </div>
                 <div class="separator separator-image"><img src='{{ "/assets/images/separator2.png" | relative_url }}'
                                                             alt="Separateur de contenu"></div>
@@ -14,7 +14,7 @@
                 <h2 class="subtitle front">Photos de paysages et de ciels étoilés. </h2>
                 <div class="filter-holder inline-filters">
                     <div class="gallery-filters">
-                        <a href="#" class="gallery-filter gallery-filter-active" data-filter="*">Toutes mes photos</a>
+                        <a href="#" class="gallery-filter gallery-filter-active" data-filter="*">Tout</a>
                         {% for tag in site.data.tags %}
                         <a href="" class="gallery-filter" data-filter=".{{ tag.label }}">{{ tag.label }}</a>
                         {% endfor %}
@@ -31,7 +31,7 @@
                     <div class="gallery-items vertical-gallery popup-gallery four-columns-box">
                         {% for photo in site.photos %}
                         {% for photolol in photo.photos %}
-                        <div class="gallery-item {{ photolol.tag1 }} {{ photolol.tag2 }}">
+                        <div class="gallery-item {{ photolol.tag1 }} {{ photolol.tag2 }} {{ photolol.tag3 }}">
                             <a href="photos/photos/max/{{ photolol.path}}" alt="{{ photolol.alt }}" data-index="{{ forloop.index }}"
                                title="{{ photolol.description }}">
                                 <img src="photos/photos/min/{{ photolol.path}}" class="respimg" alt="{{ photolol.alt }}"
