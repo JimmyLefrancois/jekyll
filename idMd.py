@@ -197,20 +197,21 @@ def process_images_in_folder(folder_path, url):
             x_max_new, x_min_new, y_max_new, y_min_new = transform_coords_to_square(cords, image_to_crop)
             cropped_image = image_to_crop.crop((x_min_new, y_min_new, x_max_new, y_max_new))
 
-            cropped_image_path = "./_photos/photos/cropped_image.jpg"
+            cropped_image_path = "./_photos/photos/"+ image_filename.replace('.jpg', '') +"_cropped_image.jpg"
             cropped_image.save(cropped_image_path)
 
             image_name = send_first_request(url, cropped_image_path)
             bird_name, probability_string, probability_float = send_second_request(url, image_name)
             bird_names.append(bird_name.replace("'", "\'"))
             print(f'Il s\'agit à {probability_string} d\'un {bird_name} pour l\'image {image_filename}')
-            os.remove('./_photos/photos/cropped_image.jpg')
+            #os.remove('./_photos/photos/cropped_image.jpg')
 
             if probability_float < 90:
                 # Déplace l'image dans 'manualActions'
                 manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
-                print(f"Image déplacée vers 'manualActions' : {image_filename}")
+                shutil.move(cropped_image_path, os.path.join(manual_actions_folder, image_filename +"cropped_image.jpg"))
+                print(f"Images déplacées vers 'manualActions' : {image_filename}")
             else:
                 rename_photo(bird_name, folder_path, image_path)
     return bird_names
