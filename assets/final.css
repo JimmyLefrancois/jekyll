@@ -5620,13 +5620,23 @@ footer {
 	color: #1b2659;
 }
 .inline-filters {
-	float:left;
-	width:100%;
-	padding:30px 0;
-	margin:20px 0 0;
-	position:relative;
+  float: left;
+  width: 100%;
+  padding: 30px 0 0 0;
+  margin: 20px 0 0 0;
+  position: relative;
 }
 .inline-filters:before {
+	content:'';
+	position:absolute;
+	top:10px;
+	height:1px;
+	background:#ccc;
+	left:50%;
+	width:120px;
+	margin-left:-60px;
+}
+.inline-filters:after {
 	content:'';
 	position:absolute;
 	top:10px;
@@ -7179,7 +7189,7 @@ section {
 	padding:20px 0;
 }
 .gallery-item {
-	width:100%!important;
+	width:50%!important;
 }
 .grid-small-pad  .grid-item-holder , .grid-big-pad  .grid-item-holder{
 	padding:20px 0 !important;
@@ -7304,8 +7314,8 @@ section {
 	}
 
 	.logo-holder a img {
-	    width: 170px;
-	    margin-top: -7px;
+	    /*width: 170px;*/
+	    margin-top: 0px;
 	    height: auto;
 	}
 
@@ -7463,3 +7473,9 @@ section {
 		height: 6px;
 	}
 }*/
+
+@media only screen and (max-width: 640px){
+    .grid-item h3, .vis-port-info .grid-item span, .show-share, .inline-filters a {
+        font-size: 12px;
+    }
+}
