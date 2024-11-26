@@ -122,7 +122,7 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
     # Scanner les photos dans le répertoire
     new_photos = []
     for index, filename in enumerate(os.listdir(directory), start=0):
-        if bird_names[index] == 'no_coords':
+        if bird_names[filename] == 'no_coords':
             continue
         if filename.lower().endswith(('.jpg', '.jpeg', '.png')):  # Ajuster les extensions si nécessaire
             photo_path = os.path.basename(filename)
@@ -132,8 +132,8 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
                     'path': photo_path,
                     # 'alt': '',
                     # 'description': '',
-                    'alt': bird_names[index],
-                    'description': bird_names[index],
+                    'alt': bird_names[filename],
+                    'description': bird_names[filename],
                     'tag1': 'Animaux',
                     'tag2': 'Oiseaux',
                     'tag3': 'Nature'
@@ -192,14 +192,14 @@ def resize_image(source_path, destination_path, target_width):
 # Fonction pour traiter les images et enregistrer celles avec une probabilité < 90%
 def process_images_in_folder(folder_path, url, excel_file):
     df = pd.DataFrame(columns=["Nom du fichier", "Nom de l'oiseau", "Probabilité"])
-    bird_names = []
+    bird_names = {}
     for image_filename in os.listdir(folder_path):
         if image_filename.lower().endswith(('.jpg', '.jpeg')):
 
             image_path = os.path.join(folder_path, image_filename)
             cords, image_to_crop = bird_coords(image_path)
             if cords is None:
-                bird_names.append('no_coords')
+                bird_names[image_filename] = 'no_coords'
                 manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
                 new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": "Pas de coords", "Probabilité": "Pas de coords"}])
@@ -222,14 +222,16 @@ def process_images_in_folder(folder_path, url, excel_file):
                 shutil.move(cropped_image_path, os.path.join(manual_actions_folder, image_filename +"_cropped_image.jpg"))
                 new_row = pd.DataFrame([{"Nom du fichier": image_filename, "Nom de l'oiseau": bird_name, "Probabilité": probability_float}])
                 df = pd.concat([df, new_row], ignore_index=True)
+                bird_names[image_filename] = 'no_coords'
                 print(f"Images déplacées vers 'manualActions' : {image_filename}")
             else:
-                bird_names.append(bird_name.replace("'", "\'"))
-                rename_photo(bird_name, folder_path, image_path)
+                new_name = rename_photo(bird_name, folder_path, image_path)
+                bird_names[new_name] = bird_name.replace("'", "\'")
                 os.remove(cropped_image_path)
 
 
     df.to_excel(excel_file, index=False)
+    print(bird_names)
     return bird_names
 
 def rename_photo(bird_name, folder_path, image_path):
@@ -238,6 +240,7 @@ def rename_photo(bird_name, folder_path, image_path):
     new_name = f"{bird_slug}-{unique_id}.jpg"  # Combine le slug et l'ID unique
     new_path = os.path.join(folder_path, new_name)
     os.rename(image_path, new_path)
+    return new_name
 
 def transform_coords_to_square(cords, image):
     # Calculer la largeur et la hauteur actuelles
