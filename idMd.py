@@ -204,11 +204,10 @@ def process_images_in_folder(folder_path, url, excel_file):
 
             image_name = send_first_request(url, cropped_image_path)
             bird_name, probability_string, probability_float = send_second_request(url, image_name)
-            bird_names.append(bird_name.replace("'", "\'"))
             print(f'Il s\'agit à {probability_string} d\'un {bird_name} pour l\'image {image_filename}')
             #os.remove('./_photos/photos/cropped_image.jpg')
 
-            if probability_float < 90:
+            if probability_float < 80:
                 # Déplace l'image dans 'manualActions'
                 manual_actions_folder = './_photos/photos/manualActions'
                 shutil.move(image_path, os.path.join(manual_actions_folder, image_filename))
@@ -217,6 +216,7 @@ def process_images_in_folder(folder_path, url, excel_file):
                 df = pd.concat([df, new_row], ignore_index=True)
                 print(f"Images déplacées vers 'manualActions' : {image_filename}")
             else:
+                bird_names.append(bird_name.replace("'", "\'"))
                 rename_photo(bird_name, folder_path, image_path)
 
     df.to_excel(excel_file, index=False)
