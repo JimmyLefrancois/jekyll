@@ -33,6 +33,10 @@
         window.history.replaceState(null, '', `#${$.magnificPopup.instance.currItem.el.context.dataset.index}`);
     });
 
+    $('.popup-gallery').on('mfpChange', function (e /*, params */) {
+        window.history.replaceState(null, '', `#${$.magnificPopup.instance.currItem.el.context.dataset.index}`);
+    });
+
     $('.popup-gallery').on('mfpClose', function (e /*, params */) {
         history.replaceState(null, '', window.location.pathname);
     });
