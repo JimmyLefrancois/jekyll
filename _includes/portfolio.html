@@ -30,12 +30,12 @@
                     <!--  project images -->
                     <div class="gallery-items vertical-gallery popup-gallery four-columns-box">
                         {% for photo in site.photos %}
-                        {% for photolol in photo.photos %}
-                        <div class="gallery-item {{ photolol.tag1 }} {{ photolol.tag2 }} {{ photolol.tag3 }}">
-                            <a href="photos/photos/max/{{ photolol.path}}" alt="{{ photolol.alt }}" data-index="{{ forloop.index }}"
-                               title="{{ photolol.description }}">
-                                <img src="photos/photos/min/{{ photolol.path}}" class="respimg" alt="{{ photolol.alt }}"
-                                     title="{{ photolol.description }}">
+                        {% for photoPath in photo.photos %}
+                        <div class="gallery-item {{ photoPath.tag1 }} {{ photoPath.tag2 }} {{ photoPath.tag3 }}">
+                            <a href="photos/photos/max/{{ photoPath.path}}" alt="{{ photoPath.alt }}" data-index="{{ forloop.index }}"
+                               title="{{ photoPath.description }}">
+                                <img src="photos/photos/min/{{ photoPath.path}}" class="respimg" alt="{{ photoPath.alt }}"
+                                     title="{{ photoPath.description }}">
                             </a>
                         </div>
                         {% endfor %}
