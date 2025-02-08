@@ -46,13 +46,3 @@
         </section>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const gallery = document.querySelector('.random-gallery');
-    const items = Array.from(gallery.children);
-    
-    items.sort(() => Math.random() - 0.5);
-    items.forEach(item => gallery.appendChild(item));
-});
-</script>
