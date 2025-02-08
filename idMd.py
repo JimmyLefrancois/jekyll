@@ -263,7 +263,7 @@ def transform_coords_to_square(cords, image):
     return x_max_new, x_min_new, y_max_new, y_min_new
 
 def bird_coords(image_path):
-    model = YOLO("yolov8m.pt")
+    model = YOLO("yolo11n.pt")
     results = model.predict(image_path)
     image = Image.open(image_path)
     result = results[0]

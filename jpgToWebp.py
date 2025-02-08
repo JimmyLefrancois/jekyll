@@ -36,7 +36,11 @@ def convert_images_to_jpg_and_webp(input_folder, output_folder_webp):
                 print(f"Erreur lors du traitement de {filename}: {e}")
 
 # Chemins des dossiers
-input_folder = "_photos/photos/max"
-output_folder_webp = "_photos/photos/max"
+input_folder_max = "_photos/photos/max"
+output_folder_max_webp = "_photos/photos/max"
 
-convert_images_to_jpg_and_webp(input_folder, output_folder_webp)
+input_folder_min = "_photos/photos/min"
+output_folder_min_webp = "_photos/photos/min"
+
+convert_images_to_jpg_and_webp(input_folder_max, output_folder_max_webp)
+convert_images_to_jpg_and_webp(input_folder_min, output_folder_min_webp)
