@@ -3,7 +3,7 @@ layout: albums
 title: Wildlife
 photospath: wildlife
 location: France
-date: 2024-11-26 21:54:26 +0200
+date: 2025-02-08 21:54:52 +0200
 description: Séance photos et bivouac à Charmant Som - France - Isère - Grenoble -
   Photographies
 description_album: Séance photos et bivouac à Charmant Som
@@ -1329,6 +1329,54 @@ photos:
 - path: verdier-d-europe-f51323c0-177c-412e-8796-f61043ef7fc5.webp
   alt: Verdier d'Europe
   description: Verdier d'Europe
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: buse-variable-23485879-9fd8-404f-ad0c-312da3abfe9b.webp
+  alt: Buse variable
+  description: Buse variable
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: chardonneret-elegant-27fa8786-7797-4bf4-b74b-45a2661ca18a.webp
+  alt: Chardonneret élégant
+  description: Chardonneret élégant
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: etourneau-sansonnet-59ff9028-79d9-4172-8325-bfaa930b2376.webp
+  alt: Étourneau sansonnet
+  description: Étourneau sansonnet
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: grosbec-casse-noyaux-6acc7127-8558-45a1-ab6b-913d7aa75e54.webp
+  alt: Grosbec casse-noyaux
+  description: Grosbec casse-noyaux
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: heron-cendre-8aabe9db-d255-4945-8fe3-adbbdae359fa.webp
+  alt: Héron cendré
+  description: Héron cendré
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: pinson-du-nord-40cb79c2-42fc-4b50-ba67-736dee5c35bd.webp
+  alt: Pinson du Nord
+  description: Pinson du Nord
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: pinson-du-nord-9928ff15-59fd-450d-be1a-e80288a3b499.webp
+  alt: Pinson du Nord
+  description: Pinson du Nord
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: rougegorge-familier-6a0a80c3-07ba-44c4-869c-73aebfc84802.webp
+  alt: Rougegorge familier
+  description: Rougegorge familier
   tag1: Animaux
   tag2: Oiseaux
   tag3: Nature

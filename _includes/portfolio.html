@@ -28,17 +28,17 @@
             <div class="container column-container">
                 <div class="row">
                     <!--  project images -->
-                    <div class="gallery-items vertical-gallery popup-gallery four-columns-box">
+                    <div class="gallery-items vertical-gallery popup-gallery four-columns-box random-gallery">
                         {% for photo in site.photos %}
-                        {% for photoPath in photo.photos %}
-                        <div class="gallery-item {{ photoPath.tag1 }} {{ photoPath.tag2 }} {{ photoPath.tag3 }}">
-                            <a href="photos/photos/max/{{ photoPath.path}}" alt="{{ photoPath.alt }}" data-index="{{ forloop.index }}"
-                               title="{{ photoPath.description }}">
-                                <img src="photos/photos/min/{{ photoPath.path}}" class="respimg" alt="{{ photoPath.alt }}"
-                                     title="{{ photoPath.description }}">
-                            </a>
-                        </div>
-                        {% endfor %}
+                            {% for photoPath in photo.photos %}
+                            <div class="gallery-item {{ photoPath.tag1 }} {{ photoPath.tag2 }} {{ photoPath.tag3 }}">
+                                <a href="photos/photos/max/{{ photoPath.path}}" alt="{{ photoPath.alt }}" data-index="{{ forloop.index }}"
+                                title="{{ photoPath.description }}">
+                                    <img src="photos/photos/min/{{ photoPath.path}}" class="respimg" alt="{{ photoPath.alt }}"
+                                        title="{{ photoPath.description }}">
+                                </a>
+                            </div>
+                            {% endfor %}
                         {% endfor %}
                     </div>
                 </div>
@@ -46,3 +46,13 @@
         </section>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.querySelector('.random-gallery');
+    const items = Array.from(gallery.children);
+    
+    items.sort(() => Math.random() - 0.5);
+    items.forEach(item => gallery.appendChild(item));
+});
+</script>
