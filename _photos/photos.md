@@ -3,7 +3,7 @@ layout: albums
 title: Wildlife
 photospath: wildlife
 location: France
-date: 2025-02-08 21:54:52 +0200
+date: 2025-02-08 22:19:12 +0200
 description: Séance photos et bivouac à Charmant Som - France - Isère - Grenoble -
   Photographies
 description_album: Séance photos et bivouac à Charmant Som
@@ -1377,6 +1377,72 @@ photos:
 - path: rougegorge-familier-6a0a80c3-07ba-44c4-869c-73aebfc84802.webp
   alt: Rougegorge familier
   description: Rougegorge familier
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: buse-variable-801d819d-57b3-4c91-9b9b-60b9825a72fd.webp
+  alt: Buse variable
+  description: Buse variable
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: canard-colvert-32467346-7d1c-4f4a-8bdd-888e15a6be76.webp
+  alt: Canard colvert
+  description: Canard colvert
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: canard-colvert-7058ef6c-36c4-4fdf-bd44-e7aa1f833c15.webp
+  alt: Canard colvert
+  description: Canard colvert
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: faucon-crecerelle-13108277-da17-4018-8bbf-0eb679c2c53b.webp
+  alt: Faucon crécerelle
+  description: Faucon crécerelle
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: flamant-rose-1039ac98-eb7b-42f1-8fef-b430180b7d4d.webp
+  alt: Flamant rose
+  description: Flamant rose
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: flamant-rose-882e4039-fc07-44c5-9d83-1d6e1fd0e27a.webp
+  alt: Flamant rose
+  description: Flamant rose
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: grande-aigrette-1380604c-bab4-49e9-892c-800e0ea29f79.webp
+  alt: Grande Aigrette
+  description: Grande Aigrette
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: grande-aigrette-6e9f8d98-a4a6-48ff-968b-6199a81c364d.webp
+  alt: Grande Aigrette
+  description: Grande Aigrette
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: grande-aigrette-e0ba89e1-c666-47fc-bc41-816ba208b0b4.webp
+  alt: Grande Aigrette
+  description: Grande Aigrette
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: grimpereau-des-jardins-961c889c-4d97-450d-bea4-5df694637960.webp
+  alt: Grimpereau des jardins
+  description: Grimpereau des jardins
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+- path: heron-cendre-ea1c95e6-f116-42e0-9cae-cc5388e4bf8c.webp
+  alt: Héron cendré
+  description: Héron cendré
   tag1: Animaux
   tag2: Oiseaux
   tag3: Nature
