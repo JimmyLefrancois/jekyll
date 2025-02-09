@@ -30,7 +30,8 @@
                     <!--  project images -->
                     <div class="gallery-items vertical-gallery popup-gallery four-columns-box random-gallery">
                         {% for photo in site.photos %}
-                            {% for photoPath in photo.photos %}
+                            {% assign sorted_photos = photo.photos | sort: 'date' %}
+                            {% for photoPath in sorted_photos reversed %}
                             <div class="gallery-item {{ photoPath.tag1 }} {{ photoPath.tag2 }} {{ photoPath.tag3 }}">
                                 <a href="photos/photos/max/{{ photoPath.path}}" alt="{{ photoPath.alt }}" data-index="{{ forloop.index }}"
                                 title="{{ photoPath.description }}">

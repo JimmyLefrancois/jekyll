@@ -68,27 +68,23 @@ def send_second_request(url, image_name):
 
     return bird_name, probability_string, probability_float
 
-def compress_images(directory):
+def compress_image(image_path):
     """
-    Compresse toutes les images du répertoire source sans perte de qualité.
+    Compresse une image sans perte de qualité.
 
-    :param directory: Répertoire contenant les images à compresser.
+    :param image_path: Chemin de l'image à compresser.
     """
-    for filename in os.listdir(directory):
-        if filename.lower().endswith(('.jpg', '.jpeg', '.png')):
-            source_path = os.path.join(directory, filename)
+    with Image.open(image_path) as img:
+        # Déterminer le format de l'image
+        image_format = img.format
 
-            with Image.open(source_path) as img:
-                # Déterminer le format de l'image
-                image_format = img.format
-
-                # Compresser selon le format
-                if image_format == 'JPEG':
-                    img.save(source_path, format='JPEG', optimize=True)
-                    print(f"Image {filename} compressée (JPEG).")
-                elif image_format == 'PNG':
-                    img.save(source_path, format='PNG', compress_level=6)  # Compression sans perte pour PNG
-                    print(f"Image {filename} compressée (PNG).")
+        # Compresser selon le format
+        if image_format == 'JPEG':
+            img.save(image_path, format='JPEG', optimize=True)
+            print(f"Image {os.path.basename(image_path)} compressée (JPEG).")
+        elif image_format == 'PNG':
+            img.save(image_path, format='PNG', compress_level=6)  # Compression sans perte pour PNG
+            print(f"Image {os.path.basename(image_path)} compressée (PNG).")
 
 def update_markdown(directory, markdown_file, max_directory, min_directory, bird_names, target_width=800):
     """
@@ -102,7 +98,6 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
     :param target_width: Largeur cible des photos redimensionnées (en pixels).
     """
     # Compresser les images dans le répertoire source
-    compress_images(directory)
 
     # Initialiser YAML
     yaml = YAML()
@@ -127,6 +122,20 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
         if filename.lower().endswith(('.jpg', '.jpeg', '.png')):  # Ajuster les extensions si nécessaire
             photo_path = os.path.basename(filename)
             if photo_path not in existing_paths:
+                # Obtenir la date de création du fichier                
+                file_path = os.path.join(directory, filename)
+                with Image.open(file_path) as img:
+                    exif_data = img._getexif()
+                    if exif_data and 36867 in exif_data:
+                        creation_date = datetime.strptime(exif_data[36867], '%Y:%m:%d %H:%M:%S')
+                    else:
+                        creation_time = os.path.getmtime(file_path)
+                        creation_date = datetime.fromtimestamp(creation_time)
+                    formatted_date = creation_date.strftime('%Y-%m-%d')
+                
+                compress_image(file_path)
+                print(f"Date de création de {filename}: {formatted_date}")
+
                 # Ajouter la photo au fichier Markdown
                 new_photos.append({
                     'path': photo_path,
@@ -136,7 +145,8 @@ def update_markdown(directory, markdown_file, max_directory, min_directory, bird
                     'description': bird_names[filename],
                     'tag1': 'Animaux',
                     'tag2': 'Oiseaux',
-                    'tag3': 'Nature'
+                    'tag3': 'Nature',
+                    'date': formatted_date  # Ajout de la date du fichier
                 })
 
                 # Déplacer la photo vers le répertoire 'max'

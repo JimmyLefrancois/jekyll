@@ -43,3 +43,4 @@ exclude:
 collections:
   photos:
     output: true
+    sort_by: description
