@@ -3,7 +3,7 @@ layout: albums
 title: Wildlife
 photospath: wildlife
 location: France
-date: 2025-02-09 22:14:42 +0200
+date: 2025-02-16 20:34:30 +0200
 description: Séance photos et bivouac à Charmant Som - France - Isère - Grenoble -
   Photographies
 description_album: Séance photos et bivouac à Charmant Som
@@ -1671,4 +1671,18 @@ photos:
   tag2: Oiseaux
   tag3: Nature
   date: '2025-02-09'
+- path: grand-cormoran-14bc5cc1-f9d8-4c84-ba21-a5378ace0a51.jpg
+  alt: Grand Cormoran
+  description: Grand Cormoran
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+  date: '2025-02-12'
+- path: vautour-fauve-781614d4-9fda-4117-9ee4-4f5899015de4.jpg
+  alt: Vautour fauve
+  description: Vautour fauve
+  tag1: Animaux
+  tag2: Oiseaux
+  tag3: Nature
+  date: '2025-02-16'
 ---
